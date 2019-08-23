@@ -1,5 +1,5 @@
 ---
-title: Example post: Lorem
+title: "Example post: Lorem"
 date: 13-11-2018
 writtenBy: Sinan Aksay
 ---

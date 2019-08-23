@@ -1,0 +1,24 @@
+.home {
+  width: 740px;
+  max-width: 100%;
+  margin: 100px auto 200px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.home h1 {
+  margin-bottom: 60px;
+}
+
+.pageLink {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.pageLink h2 {
+  margin: 0;
+  margin-bottom: 5px;
+}

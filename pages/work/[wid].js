@@ -1,26 +1,27 @@
-import { useRouter } from 'next/router'
-import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import matter from 'gray-matter';
+import styles from './work.module.css'
 
-const Post = () => {
 
-  const [data, setData] = useState()
+const Post = ({ content }) => (
+  <article className={styles.article}>
+   {content 
+   ?
+   <ReactMarkdown source={content}/>
+   : 'loading' }
+   </article>
+)
 
-  const router = useRouter()
-  const { wid } = router.query
+Post.getInitialProps = async function ({ query }) {
 
-  if(wid) {
-    try {
-      import(`../../works/${wid}.md`)
-      .then(data => setData(data.default))
-    } catch {
-      console.log('err!')
-    } 
+  const md = await import(`../../works/${query.wid}.md`)
+  const work = matter(md.default)
+
+  return {
+    ...work
   }
 
-  return (
-    data ? <ReactMarkdown source={data}/> : 'loading'
-  )
+
 }
 
 export default Post
