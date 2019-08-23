@@ -20,5 +20,7 @@
 
 .pageLink h2 {
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  color: black;
+  font-weight: 500;
 }

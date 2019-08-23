@@ -2,9 +2,15 @@ import React from 'react'
 import Link from 'next/link';
 import getWorks from '../getWorks'
 import styles from './home.css'
+import Head from 'next/head';
+
 
 const Home = ({ pages }) => (
     <div className={styles.home}>
+      <Head>
+        <title>Home</title>
+        <link href="/static/common.css" rel="stylesheet" />
+      </Head>
       {console.log}
       <h1>Pages</h1>
       {

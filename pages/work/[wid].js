@@ -1,15 +1,23 @@
 import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter';
 import styles from './work.module.css'
+import Head from 'next/head';
 
 
-const Post = ({ content }) => (
-  <article className={styles.article}>
-   {content 
-   ?
-   <ReactMarkdown source={content}/>
-   : 'loading' }
-   </article>
+
+const Post = ({ content, data }) => (
+  <>
+    <Head>
+      <title>{data.title}</title>
+      <link href="/static/common.css" rel="stylesheet" />
+    </Head>
+    <article className={styles.article}>
+    {content 
+    ?
+    <ReactMarkdown source={content}/>
+    : 'loading' }
+    </article>
+   </>
 )
 
 Post.getInitialProps = async function ({ query }) {
