@@ -22,7 +22,7 @@ const Post = ({ content, data }) => (
 
 Post.getInitialProps = async function ({ query }) {
 
-  const md = await import(`../../works/${query.wid}.md`)
+  const md = await import(`../../works/${query.wid}/index.md`)
   const work = matter(md.default)
 
   return {

@@ -9,7 +9,7 @@ async function getWorks() {
       const values = keys.map(ctx);
       const data = keys.map((key, index) => {
         // Create slug from filename
-        const slug = key.replace(/^.*[\\\/]/, '').split('.').slice(0, -1).join('.');
+        const slug = key.match(/\/(.+)\/index/, '')[1];
         const value = values[index];
         // Parse document
         const document = matter(value.default);
@@ -19,7 +19,7 @@ async function getWorks() {
         };
       });
       return data;
-    })(require.context('./works', true, /\.md$/));
+    })(require.context('./works', true, /\index.md$/));
 
     resolve(pages)
 
