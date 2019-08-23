@@ -1,4 +1,4 @@
-# Next.js-MD-Portfolio
+# Next.js MD Portfolio
 
 A project uses markdown files as a database and renders them using React and Next.js
 
