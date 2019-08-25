@@ -12,12 +12,20 @@ const Post = ({ content, data }) => (
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
     <article className={styles.article}>
-    {content 
-    ?
-    <ReactMarkdown source={content}/>
-    : 'loading' }
+      <h1>{data.title}</h1>
+
+      {content
+        ?
+        <ReactMarkdown source={content} renderers={{ image: Img }} />
+        : 'loading'}
     </article>
-   </>
+  </>
+)
+
+const Img = ({ alt, src }) => (
+  <div className={styles.imgContainer}>
+    <img src={src} alt={alt} />
+  </div>
 )
 
 Post.getInitialProps = async function ({ query }) {
