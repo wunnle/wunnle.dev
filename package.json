@@ -18,6 +18,7 @@
     "raw-loader": "^3.1.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "react-intersection-observer": "^8.24.1",
     "react-markdown": "^4.1.0"
   }
 }
