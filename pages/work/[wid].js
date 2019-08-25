@@ -7,23 +7,44 @@ import Head from 'next/head';
 
 
 
-const Post = ({ content, data }) => {
+const Post = ({ images, content, data: { title, website } }) => {
 
 
   return (<>
     <Head>
-      <title>{data.title}</title>
+      <title>{title}</title>
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
     <article className={styles.article}>
-      <h1>{data.title}</h1>
-
-      {content
-        ?
-        <ReactMarkdown source={content} renderers={{ image: Img }} />
-        : 'loading'}
+      <h1>{title}</h1>
+      <div className={styles.container}>
+        <div className={styles.inner}>
+          {content
+            ?
+            <ReactMarkdown source={content} />
+            : 'loading'}
+        </div>
+        <div className={styles.sidebar}>
+          <p><a href={website}>visit website</a></p>
+        </div>
+      </div>
+      <div className={styles.images}>
+        <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
+      </div>
     </article>
   </>)
+}
+
+const P = ({ children }) => {
+  if (children && children[0]
+    && children.length === 1
+    && children[0].props
+    && children[0].props.src) { // rendering media without p wrapper
+
+    return children;
+  }
+
+  return <p>{children}</p>;
 }
 
 const Img = ({ alt, src }) => {
@@ -52,10 +73,15 @@ const Img = ({ alt, src }) => {
 Post.getInitialProps = async function ({ query }) {
 
   const md = await import(`../../works/${query.wid}/index.md`)
+  const imd = await import(`../../works/${query.wid}/images.md`)
   const work = matter(md.default)
+  const images = matter(imd.default)
 
   return {
-    ...work
+    ...work,
+    images: {
+      ...images
+    }
   }
 
 
