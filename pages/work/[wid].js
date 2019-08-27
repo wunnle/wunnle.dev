@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter';
@@ -7,8 +7,7 @@ import Head from 'next/head';
 
 
 
-const Post = ({ images, content, data: { title, website } }) => {
-
+const Post = ({ images, content, data: { title, year, client, services, tech, website } }) => {
 
   return (<>
     <Head>
@@ -25,7 +24,29 @@ const Post = ({ images, content, data: { title, website } }) => {
             : 'loading'}
         </div>
         <div className={styles.sidebar}>
-          <p><a href={website}>visit website</a></p>
+          {
+            client
+            &&
+            <div className={styles.sidebarSection}>
+              <p className={styles.sidebarTitle}>Client</p>
+              <p className={styles.sidebarItem}>{client}</p>
+            </div>
+          }
+          {
+            services
+            &&
+            <div className={styles.sidebarSection}>
+              <p className={styles.sidebarTitle}>Services</p>
+              <ul>
+                {
+                  services.split(', ').map(s => <li className={styles.sidebarItem} key={s}>{s}</li>)
+                }
+              </ul>
+            </div>
+          }
+          <div className={styles.sidebarSection}>
+            <p className={styles.sidebarItem}><a href={website} target='_blank'>visit website</a></p>
+          </div>
         </div>
       </div>
       <div className={styles.images}>
@@ -52,7 +73,7 @@ const Img = ({ alt, src }) => {
   const [gotInView, setGotInView] = useState(false)
 
   const [ref, inView] = useInView({
-    threshold: 0,
+    threshold: 0.1,
   })
 
   useEffect(() => {
@@ -60,8 +81,6 @@ const Img = ({ alt, src }) => {
       setGotInView(true)
     }
   }, [inView])
-
-  console.log({ inView })
 
   return (
     <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
