@@ -2,45 +2,6 @@
   display: flex;
 }
 
-/* sidebar */
-
-.sidebar {
-  width: 50%;
-  margin-top: -60px;
-}
-
-.sidebarSection + .sidebarSection {
-  margin-top: 40px;
-}
-
-.sidebarTitle {
-  color: #939394;
-  font-size: 18px;
-  margin-bottom: 6px;
-  opacity: 0.9;
-  font-weight: 500;
-}
-
-.sidebarItem {
-  color: #56595f;
-  font-size: 18px;
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  margin-bottom: 4px;
-}
-
-.sidebarItem a {
-  color: #0079ff;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.sidebar ul {
-  padding-left: 0;
-  margin: 0;
-}
-
 /* article */
 
 .article {

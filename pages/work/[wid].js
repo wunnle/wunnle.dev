@@ -4,18 +4,19 @@ import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter';
 import styles from './work.module.css'
 import Head from 'next/head';
+import Sidebar from './sidebar';
 
 
 
-const Post = ({ images, content, data: { title, year, client, services, tech, website } }) => {
+const Post = ({ images, content, data }) => {
 
   return (<>
     <Head>
-      <title>{title}</title>
+      <title>{data.title}</title>
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
     <article className={styles.article}>
-      <h1>{title}</h1>
+      <h1>{data.title}</h1>
       <div className={styles.container}>
         <div className={styles.inner}>
           {content
@@ -23,31 +24,7 @@ const Post = ({ images, content, data: { title, year, client, services, tech, we
             <ReactMarkdown source={content} />
             : 'loading'}
         </div>
-        <div className={styles.sidebar}>
-          {
-            client
-            &&
-            <div className={styles.sidebarSection}>
-              <p className={styles.sidebarTitle}>Client</p>
-              <p className={styles.sidebarItem}>{client}</p>
-            </div>
-          }
-          {
-            services
-            &&
-            <div className={styles.sidebarSection}>
-              <p className={styles.sidebarTitle}>Services</p>
-              <ul>
-                {
-                  services.split(', ').map(s => <li className={styles.sidebarItem} key={s}>{s}</li>)
-                }
-              </ul>
-            </div>
-          }
-          <div className={styles.sidebarSection}>
-            <p className={styles.sidebarItem}><a href={website} target='_blank'>visit website</a></p>
-          </div>
-        </div>
+        <Sidebar {...data} />
       </div>
       <div className={styles.images}>
         <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
