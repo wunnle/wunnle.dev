@@ -3,6 +3,7 @@
 .sidebar {
   margin-top: -60px;
   min-width: 220px;
+  margin-left: auto;
 }
 
 .section + .section {

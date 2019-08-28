@@ -1,7 +1,10 @@
 ---
-title: Ipsum
-date: 13-11-2018
-writtenBy: Sinan Aksay
+title: 'AutoInvite'
+year: 2019
+client: SwayPay
+services: 'Front-end development, UI/UX design'
+tech: 'React, HTML5, CSS3, Figma'
+website: 'https://www.savibook.com/comfortkh/dUM'
 ---
 ## Example post: Ipsum
 
