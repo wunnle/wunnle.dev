@@ -2,10 +2,19 @@
 
 .sidebar {
   margin-top: -60px;
+  min-width: 220px;
 }
 
 .section + .section {
   margin-top: 46px;
+}
+
+.techs img:first-of-type {
+  margin-left: -4px;
+}
+
+.techs img {
+  margin-right: 3px;
 }
 
 .title {

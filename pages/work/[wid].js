@@ -4,11 +4,11 @@ import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter';
 import styles from './work.module.css'
 import Head from 'next/head';
-import Sidebar from './sidebar';
+import Sidebar from '../../components/WorkSidebar';
 
 
+const Post = ({ images, content, data, icons }) => {
 
-const Post = ({ images, content, data }) => {
 
   return (<>
     <Head>
