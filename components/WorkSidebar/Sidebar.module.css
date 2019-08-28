@@ -38,6 +38,13 @@
   color: #0079ff;
   font-weight: 500;
   text-decoration: none;
+  background: url("./link-arrow.svg") right 12px center no-repeat;
+  padding-right: 38px;
+  transition: background-position cubic-bezier(0.39, 0.58, 0.57, 1) 0.07s;
+}
+
+.item a:hover {
+  background-position: right 8px center;
 }
 
 .sidebar ul {
