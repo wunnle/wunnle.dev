@@ -61,6 +61,15 @@ const Img = ({ alt, src }) => {
     }
   }, [inView])
 
+  if (src.match(/.mp4$/)) {
+    return (
+      <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
+        <span>{gotInView}</span>
+        <video autoPlay={true} src={gotInView && src}></video>
+      </div>
+    )
+  }
+
   return (
     <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
       <img srcSet={`${src} 2x`} src={src} alt={alt} />

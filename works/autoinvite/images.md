@@ -5,4 +5,3 @@
 ![Review success](/static/autoinvite/review.jpg)
 
 ![Share](/static/autoinvite/share.jpg)
-
