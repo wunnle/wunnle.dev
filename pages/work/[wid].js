@@ -15,16 +15,18 @@ const Post = ({ images, content, data, icons }) => {
       <title>{data.title}</title>
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
-    <article className={styles.article}>
-      <h1>{data.title}</h1>
-      <div className={styles.container}>
-        <div className={styles.inner}>
-          {content
-            ?
-            <ReactMarkdown source={content} />
-            : 'loading'}
+    <article className={styles.work}>
+      <div className={styles.topInfo}>
+        <h1>{data.title}</h1>
+        <div className={styles.container}>
+          <div className={styles.inner}>
+            {content
+              ?
+              <ReactMarkdown source={content} />
+              : 'loading'}
+          </div>
+          <Sidebar {...data} />
         </div>
-        <Sidebar {...data} />
       </div>
       <div className={styles.images}>
         <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
@@ -61,7 +63,7 @@ const Img = ({ alt, src }) => {
 
   return (
     <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
-      <img src={src} alt={alt} />
+      <img srcSet={`${src} 2x`} src={src} alt={alt} />
     </div>
   )
 }

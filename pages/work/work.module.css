@@ -1,10 +1,12 @@
-.container {
-  display: flex;
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 /* article */
 
-.article {
+.work {
   width: 1200px;
   max-width: 100%;
   margin: 100px auto 200px;
@@ -12,12 +14,44 @@
   box-sizing: border-box;
 }
 
-.article h1 {
+.work h1 {
   font-size: 40px;
   line-height: 44px;
   color: #242121;
   letter-spacing: -0.03em;
   margin-bottom: 10px;
+}
+
+.topInfo {
+  width: 1000px;
+  margin: auto;
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .topInfo {
+    width: 600px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .inner {
+    padding-right: 60px;
+  }
 }
 
 .inner p {
@@ -26,7 +60,6 @@
   line-height: 32px;
   font-size: 20px;
   color: #3b4c56;
-  width: 60%;
 }
 
 img {
@@ -34,28 +67,38 @@ img {
   vertical-align: middle;
 }
 
-.article h1,
-.article h2,
-.article p {
+.work h1,
+.work h2,
+.work p {
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1090px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .images {
+    justify-content: center;
+  }
 }
 
 .imgContainer {
-  width: 100%;
-  margin: 70px 0;
-  padding: 30px;
-  background: rgb(240, 235, 240);
+  margin: 45px 0;
+  max-width: 100%;
   box-sizing: border-box;
   transition: transform 0.2s ease-in, background-color 0.25s ease-in, transform 0.25s cubic-bezier(0.37, 1.05, 1, 1), box-shadow 0.1s ease;
   border-radius: 3px;
   transform: translateY(80px);
-  box-shadow: 0px 10px 105px -11px rgba(0, 0, 0, 0);
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1100px) {
   .imgContainer {
-    width: 100%;
-    margin: 30px 0;
-    padding: 1px;
+    margin: 25px 0;
   }
 }
 
@@ -64,6 +107,8 @@ img {
   transform: scale(1.03) rotate(-0.08deg);
   opacity: 0.8;
   border-radius: 3px;
+  max-width: 100%;
+  box-shadow: 0px 7px 19px rgba(0, 0, 0, 0.05), 0px 3px 9px rgba(0, 0, 0, 0.06);
 }
 
 .imgContainerAnim img {
@@ -82,9 +127,4 @@ img {
 
 .imgContainerAnim {
   transform: translateY(0);
-}
-
-.imgContainer img {
-  box-shadow: 0px 10px 105px -11px rgba(0, 0, 0, 0.15);
-  width: 100%;
 }
