@@ -3,6 +3,7 @@ import Link from 'next/link';
 import getWorks from '../getWorks'
 import styles from './home.css'
 import Head from 'next/head';
+import Header from '../components/Header';
 
 
 const Home = ({ pages }) => (
@@ -11,7 +12,7 @@ const Home = ({ pages }) => (
       <title>Home</title>
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
-    {console.log}
+    <Header />
     <h1>Selected works</h1>
     {
       pages.map(p => (

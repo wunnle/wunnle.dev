@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import styles from './work.module.css'
 import Head from 'next/head';
 import Sidebar from '../../components/WorkSidebar';
+import Header from '../../components/Header';
 
 
 const Post = ({ images, content, data, icons }) => {
@@ -15,6 +16,7 @@ const Post = ({ images, content, data, icons }) => {
       <title>{data.title}</title>
       <link href="/static/common.css" rel="stylesheet" />
     </Head>
+    <Header />
     <article className={styles.work}>
       <div className={styles.topInfo}>
         <h1>{data.title}</h1>
@@ -65,7 +67,7 @@ const Img = ({ alt, src }) => {
     return (
       <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
         <span>{gotInView}</span>
-        <video autoPlay={true} src={gotInView && src}></video>
+        <video muted autoPlay src={gotInView && src}></video>
       </div>
     )
   }
