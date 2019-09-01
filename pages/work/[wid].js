@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter';
@@ -7,10 +7,14 @@ import Head from 'next/head';
 import Sidebar from '../../components/WorkSidebar';
 import Header from '../../components/Header';
 import Router from 'next/router'
+import WorksContext from '../../Works.Context';
 
 
-const Post = ({ images, content, data, icons }) => {
+const Post = ({ images, content, data, slug }) => {
 
+  const works = useContext(WorksContext)
+  const currentIndex = works.findIndex(w => w.slug === slug)
+  const { slug: nextSlug } = works[currentIndex + 1] ? works[currentIndex + 1] : works[0]
 
   return (<>
     <Head>
@@ -35,11 +39,11 @@ const Post = ({ images, content, data, icons }) => {
         <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
       </div>
     </article>
-    <NextProject />
+    <NextWork nextSlug={nextSlug} />
   </>)
 }
 
-const NextProject = () => {
+const NextWork = ({ nextSlug }) => {
 
   const [ref, inView] = useInView({
     threshold: 1,
@@ -47,8 +51,9 @@ const NextProject = () => {
   })
 
   useEffect(() => {
-    if (inView) {
-      //Router.push('/work/dashboard')
+    if (inView && nextSlug) {
+      console.log('will go to ', nextSlug)
+      Router.push(`/work/${nextSlug}`)
     }
   }, [inView])
 
@@ -105,7 +110,8 @@ Post.getInitialProps = async function ({ query }) {
     ...work,
     images: {
       ...images
-    }
+    },
+    slug: query.wid
   }
 
 
