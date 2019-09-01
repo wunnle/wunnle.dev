@@ -34,7 +34,22 @@ const Post = ({ images, content, data, icons }) => {
         <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
       </div>
     </article>
+    <NextProject />
   </>)
+}
+
+const NextProject = () => {
+
+  const [ref, inView] = useInView({
+    threshold: 1,
+  })
+
+  return (
+    <div className={styles.nextProject} ref={ref}>
+      Keep scrolling to see the next project
+      {inView && <p>&darr;	</p>}
+    </div>
+  )
 }
 
 const P = ({ children }) => {
@@ -51,21 +66,14 @@ const P = ({ children }) => {
 
 const Img = ({ alt, src }) => {
 
-  const [gotInView, setGotInView] = useState(false)
-
   const [ref, inView] = useInView({
     threshold: 0.1,
+    triggerOnce: true
   })
-
-  useEffect(() => {
-    if (inView && !gotInView) {
-      setGotInView(true)
-    }
-  }, [inView])
 
   if (src.match(/.mp4$/)) {
     return (
-      <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
+      <div className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
         <span>{gotInView}</span>
         <video muted autoPlay src={gotInView && src}></video>
       </div>
@@ -73,7 +81,7 @@ const Img = ({ alt, src }) => {
   }
 
   return (
-    <div className={[styles.imgContainer, gotInView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
+    <div className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
       <img srcSet={`${src} 2x`} src={src} alt={alt} />
     </div>
   )
