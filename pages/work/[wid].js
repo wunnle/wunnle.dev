@@ -6,6 +6,7 @@ import styles from './work.module.css'
 import Head from 'next/head';
 import Sidebar from '../../components/WorkSidebar';
 import Header from '../../components/Header';
+import Router from 'next/router'
 
 
 const Post = ({ images, content, data, icons }) => {
@@ -42,7 +43,14 @@ const NextProject = () => {
 
   const [ref, inView] = useInView({
     threshold: 1,
+    triggerOnce: true
   })
+
+  useEffect(() => {
+    if (inView) {
+      //Router.push('/work/dashboard')
+    }
+  }, [inView])
 
   return (
     <div className={styles.nextProject} ref={ref}>
@@ -74,8 +82,7 @@ const Img = ({ alt, src }) => {
   if (src.match(/.mp4$/)) {
     return (
       <div className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')} ref={ref}>
-        <span>{gotInView}</span>
-        <video muted autoPlay src={gotInView && src}></video>
+        <video muted autoPlay src={inView ? src : ''}></video>
       </div>
     )
   }
