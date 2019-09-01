@@ -28,7 +28,7 @@ const Sidebar = ({ year, client, services, tech, website }) => (
       &&
       <Section className={styles.techs}>
         {
-          tech.split(', ').map(t => <Icon>{t}</Icon>)
+          tech.split(', ').map(t => <Icon key={t}>{t}</Icon>)
         }
       </Section>
     }
