@@ -8,6 +8,7 @@ import Sidebar from '../../components/WorkSidebar';
 import Header from '../../components/Header';
 import Router from 'next/router'
 import WorksContext from '../../Works.Context';
+import Line from '../../components/Line';
 
 
 const Post = ({ images, content, data, slug }) => {
@@ -23,16 +24,24 @@ const Post = ({ images, content, data, slug }) => {
     </Head>
     <Header />
     <article className={styles.work}>
-      <div className={styles.topInfo}>
-        <h1>{data.title}</h1>
-        <div className={styles.container}>
-          <div className={styles.inner}>
-            {content
-              ?
-              <ReactMarkdown source={content} />
-              : 'loading'}
+      <div className={styles.topContainer}>
+        <Line />
+        <div className={styles.topInfo}>
+          <h1>{data.title}</h1>
+          <div className={styles.container}>
+            <div className={styles.inner}>
+              {content
+                ?
+                <ReactMarkdown source={content} />
+                : 'loading'}
+              {
+                data.website
+                &&
+                <a className={styles.websiteLink} href={data.website} target='_blank'>Visit website</a>
+              }
+            </div>
+            <Sidebar {...data} />
           </div>
-          <Sidebar {...data} />
         </div>
       </div>
       <div className={styles.images}>

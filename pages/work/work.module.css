@@ -6,11 +6,13 @@ html {
 
 /* article */
 
+
+
 .work {
-  width: 1090px;
+  width: 1200px;
   max-width: 100%;
   margin: 30px auto 200px;
-  padding: 0 16px;
+  padding: 40px 16px 0;
   box-sizing: border-box;
 }
 
@@ -20,19 +22,10 @@ html {
   color: #282c35;
   letter-spacing: -0.03em;
   margin-bottom: 0;
+  margin-top: -20px;
 }
 
-.topInfo {
-  width: 100%;
-  margin: auto;
-}
 
-@media screen and (max-width: 1100px) {
-  .topInfo {
-    width: 600px;
-    max-width: 100%;
-  }
-}
 
 .container {
   display: flex;
@@ -45,19 +38,6 @@ html {
   .container {
     flex-direction: column;
   }
-}
-
-@media screen and (min-width: 1100px) {
-  .inner {
-    padding-right: 140px;
-  }
-}
-
-.inner {
-  border-left: 1px solid rgba(0, 0, 19, 0.09);
-  padding-left: 42px;
-  margin-top: 34px;
-  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1100px) {
@@ -75,10 +55,10 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
-  font-size: 20px;
+  font-size: 21px;
   color: #3b4c56;
   margin-bottom: 40px;
-  margin-top: -10px;
+  margin-top: 0px;
 }
 
 img {
@@ -92,13 +72,13 @@ img {
 }
 
 .work h2 {
+  font-size: 34px;
   font-weight: 600;
-  font-size: 24px;
   line-height: 149.7%;
   color: #282c35;
   margin: 0;
   margin-top: -6px;
-  margin-bottom: 42px;
+  margin-bottom: 47px;
 }
 
 .images {
@@ -108,6 +88,7 @@ img {
   width: 1090px;
   max-width: 100%;
   margin: auto;
+  margin-top: -45px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -168,4 +149,44 @@ img {
   width: 100%;
   flex-direction: column;
   margin-bottom: 80px;
+}
+
+.topContainer {
+  display: flex;
+  margin-left: -60px;
+}
+
+.inner {
+  margin-top: 24px;
+  box-sizing: border-box;
+  padding-bottom: 120px;
+  max-width: 633px
+}
+
+.topInfo {
+  width: 100%;
+  margin: auto;
+  margin-left: 100px;
+}
+
+@media screen and (max-width: 1100px) {
+  .topInfo {
+    width: 600px;
+    max-width: 100%;
+  }
+}
+
+.websiteLink {
+  color: #0079ff;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  background: url("./link-arrow.svg") right 12px center no-repeat;
+  padding-right: 38px;
+  transition: background-position cubic-bezier(0.39, 0.58, 0.57, 1) 0.07s;
+  margin-top: 47px;
+}
+
+.websiteLink:hover {
+  background-position: right 8px center;
 }

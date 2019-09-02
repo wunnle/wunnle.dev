@@ -32,13 +32,6 @@ const Sidebar = ({ year, client, services, tech, website }) => (
         }
       </Section>
     }
-    {
-      website
-      &&
-      <Section>
-        <p className={styles.item}><a href={website} target='_blank'>Visit website</a></p>
-      </Section>
-    }
 
   </div>
 )

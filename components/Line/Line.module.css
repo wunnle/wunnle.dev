@@ -1,0 +1,24 @@
+.line {
+  border-left: 1px solid rgba(62, 62, 225, 0.12);
+  width: 20px;
+  flex: 1;
+  position: relative;
+}
+
+.topCircle {
+  /* position: absolute;
+  top: 0; */
+  display: flex;
+  position: absolute;
+  top: -1px;
+  left: -6px;
+  transform: scale(0.8);
+}
+
+.arrow {
+  position: absolute;
+  bottom: -5px;
+  left: -4px;
+  transform: scale(1.2);
+  transform-origin: center;
+}
