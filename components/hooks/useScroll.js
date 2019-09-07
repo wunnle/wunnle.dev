@@ -6,7 +6,7 @@
 
 import { useState, useEffect } from "react";
 
-export function useScroll() {
+function useScroll() {
 
   const [scrollY, setScrollY] = useState()
 
@@ -44,4 +44,4 @@ function debounce(func, wait = 0, immediate = true) {
 }
 
 
-
+export default useScroll

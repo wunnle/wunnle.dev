@@ -9,7 +9,7 @@ import Header from '../../components/Header';
 import Router from 'next/router'
 import WorksContext from '../../Works.Context';
 import Line from '../../components/Line';
-import { useScroll } from './useScroll';
+import useScroll from '../../components/hooks/useScroll'
 
 
 const Post = ({ images, content, data, slug }) => {
