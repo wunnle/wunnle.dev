@@ -9,9 +9,14 @@ import Header from '../../components/Header';
 import Router from 'next/router'
 import WorksContext from '../../Works.Context';
 import Line from '../../components/Line';
+import { useScroll } from './useScroll';
 
 
 const Post = ({ images, content, data, slug }) => {
+
+  const { scrollY } = useScroll()
+
+  console.log({ scrollY })
 
   const works = useContext(WorksContext)
   const currentIndex = works.findIndex(w => w.slug === slug)
@@ -24,10 +29,13 @@ const Post = ({ images, content, data, slug }) => {
     </Head>
     <Header />
     <article className={styles.work}>
+      <div className={styles.titleShadow} style={{ transform: `translateY(${5 - scrollY / 20}%) rotate(90deg)` }}>{data.title}</div>
       <div className={styles.topContainer}>
         <Line />
         <div className={styles.topInfo}>
-          <h1>{data.title}</h1>
+          <hgroup>
+            <h1>{data.title}</h1>
+          </hgroup>
           <div className={styles.container}>
             <div className={styles.inner}>
               {content

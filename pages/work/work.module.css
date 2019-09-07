@@ -25,6 +25,25 @@ html {
   margin-top: -20px;
 }
 
+.work hgroup {
+  position: relative;
+}
+
+.work .titleShadow  {
+  font-size: 200px;
+  color: rgba(40, 93, 228, 0.07);
+  position: absolute;
+  font-weight: 700;
+  z-index: -1;
+  left: 500px;
+  transform: translateY(5%) rotate(90deg);
+  transition: translate 0.1s ease-in;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  left: 0;
+}
+
 
 
 .container {
