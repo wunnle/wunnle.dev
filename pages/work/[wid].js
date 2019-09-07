@@ -29,7 +29,7 @@ const Post = ({ images, content, data, slug }) => {
     </Head>
     <Header />
     <article className={styles.work}>
-      <div className={styles.titleShadow} style={{ transform: `translateY(${5 - scrollY / 20}%) rotate(90deg)` }}>{data.title}</div>
+      <div className={styles.titleShadow} style={{ transform: `translateY(${5 + scrollY / 4}%) rotate(90deg)` }}>{data.title}</div>
       <div className={styles.topContainer}>
         <Line />
         <div className={styles.topInfo}>

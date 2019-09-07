@@ -35,13 +35,14 @@ html {
   position: absolute;
   font-weight: 700;
   z-index: -1;
-  left: 500px;
+  left: 200px;
+  top: 0;
   transform: translateY(5%) rotate(90deg);
+  transform-origin: left center;
   transition: translate 0.1s ease-in;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  left: 0;
 }
 
 
