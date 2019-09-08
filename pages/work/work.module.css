@@ -6,6 +6,9 @@ html {
 
 /* article */
 
+:root {
+ --scrollY: 0px;
+}
 
 
 .work {
@@ -30,17 +33,20 @@ html {
 }
 
 .work .titleShadow  {
-  font-size: 200px;
-  color: rgba(148, 151, 158, 0.065);
-  position: absolute;
+  will-change: transform;
+  font-size: 160px;
+  color: rgba(148, 151, 158, 0.055);
+  position: fixed;
   font-weight: 700;
   z-index: -1;
   left: 200px;
   top: 0;
-  transform: translateY(5%) rotate(90deg);
+  left: 0;
+  padding-left: 200px;  
+  transform: translateY(calc(20% - (var(--scrollY) / 3)));
   transform-origin: left center;
-  transition: transform 0.03s ease;
-  width: 2000px;
+  /* transition: transform 0.03s ease; */
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }

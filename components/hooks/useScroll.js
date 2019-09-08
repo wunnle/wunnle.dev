@@ -1,28 +1,34 @@
-/**
- * useScroll React custom hook
- * Usage:
- *    const { scrollX, scrollY, scrollDirection } = useScroll();
- */
-
-import { useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 function useScroll() {
 
-  const [scrollY, setScrollY] = useState(0)
+  let scrollY = 0
+  let ticking = false
 
-  function listener(e) {
+  function onScroll() {
+    scrollY = window.scrollY || window.pageYOffset
+    requestTick()
+  }
 
-    requestAnimationFrame(() => {
-      const newScrollY = window.scrollY || window.pageYOffset
-      setScrollY(Math.floor(newScrollY))
-    })
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+    }
+    ticking = true
+  }
 
+  function update() {
+    ticking = false
+    var currentScrollY = scrollY
+
+    requestAnimationFrame(update)
+    document.documentElement.style.setProperty('--scrollY', `${currentScrollY}px`);
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", listener);
+    window.addEventListener("scroll", onScroll, false);
     return () => {
-      window.removeEventListener("scroll", listener);
+      window.removeEventListener("scroll", onScroll);
     };
   });
 
@@ -31,22 +37,5 @@ function useScroll() {
     scrollY
   };
 }
-
-function debounce(func, wait = 0, immediate = true) {
-  let timeout;
-  return function () {
-    const context = this;
-    const args = arguments;
-    const later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-
 
 export default useScroll

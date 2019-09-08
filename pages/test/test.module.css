@@ -1,0 +1,22 @@
+.wrapper {
+  height: 5000px;
+}
+
+.titleShadow  {
+  will-change: transform;
+  font-size: 160px;
+  color: rgba(148, 151, 158, 0.045);
+  position: fixed;
+  font-weight: 700;
+  z-index: -1;
+  left: 200px;
+  top: 0;
+  left: 0;
+  padding-left: 200px;  
+  transform: translateY(calc(20% - (var(--scrollY) / 14)));
+  transform-origin: left center;
+  /* transition: transform 0.01s ease; */
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
