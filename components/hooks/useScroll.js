@@ -8,10 +8,15 @@ import { useState, useEffect } from "react";
 
 function useScroll() {
 
-  const [scrollY, setScrollY] = useState()
+  const [scrollY, setScrollY] = useState(0)
 
   function listener(e) {
-    setScrollY(window.scrollY)
+
+    requestAnimationFrame(() => {
+      const newScrollY = window.scrollY || window.pageYOffset
+      setScrollY(Math.floor(newScrollY))
+    })
+
   }
 
   useEffect(() => {

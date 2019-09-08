@@ -31,7 +31,7 @@ html {
 
 .work .titleShadow  {
   font-size: 200px;
-  color: rgba(40, 93, 228, 0.07);
+  color: rgba(148, 151, 158, 0.065);
   position: absolute;
   font-weight: 700;
   z-index: -1;
@@ -39,8 +39,8 @@ html {
   top: 0;
   transform: translateY(5%) rotate(90deg);
   transform-origin: left center;
-  transition: translate 0.1s ease-in;
-  width: 100%;
+  transition: transform 0.03s ease;
+  width: 2000px;
   white-space: nowrap;
   overflow: hidden;
 }

@@ -16,7 +16,7 @@ const Post = ({ images, content, data, slug }) => {
 
   const { scrollY } = useScroll()
 
-  console.log({ scrollY })
+  console.log(Math.floor(scrollY / 1.8))
 
   const works = useContext(WorksContext)
   const currentIndex = works.findIndex(w => w.slug === slug)
@@ -29,7 +29,7 @@ const Post = ({ images, content, data, slug }) => {
     </Head>
     <Header />
     <article className={styles.work}>
-      <div className={styles.titleShadow} style={{ transform: `translateY(${5 + scrollY / 4}%) rotate(90deg)` }}>{data.title}</div>
+      <div className={styles.titleShadow} style={{ transform: `translateY(${5 + Math.floor(scrollY / 3.2)}px) rotate(90deg)` }}>{data.title}</div>
       <div className={styles.topContainer}>
         <Line />
         <div className={styles.topInfo}>
