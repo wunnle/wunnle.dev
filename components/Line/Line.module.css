@@ -22,3 +22,9 @@
   transform: scale(1.2);
   transform-origin: center;
 }
+
+@media screen and (max-width: 600px) {
+  .line {
+    display: none;
+  }
+}

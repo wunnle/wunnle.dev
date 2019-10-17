@@ -4,4 +4,26 @@ body {
 
 :root {
   --black: #242121;
+  --bigBodySize: 28px;
+  --h1Size: 42px;
+  --smallBodySize: 19px;
+  --sidebarSize: 16px;
+}
+
+@media screen and (max-width: 1100px) {
+  :root {
+    --bigBodySize: 28px;
+    --h1Size: 40px;
+    --smallBodySize: 20px;
+    --sidebarSize: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --bigBodySize: 23px;
+    --h1Size: 28px;
+    --smallBodySize: 18px;
+    --sidebarSize: 14px;
+  }
 }
