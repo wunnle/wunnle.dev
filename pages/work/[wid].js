@@ -27,31 +27,35 @@ const Post = ({ images, content, data, slug }) => {
     </Head>
     <Header />
     <article className={styles.work}>
-      <div className={styles.titleShadow}>{data.title}</div>
-      <div className={styles.topContainer}>
-        <Line />
-        <div className={styles.topInfo}>
-          <hgroup>
-            <h1>{data.title}</h1>
-          </hgroup>
-          <div className={styles.container}>
-            <div className={styles.inner}>
-              {content
-                ?
-                <ReactMarkdown source={content} />
-                : 'loading'}
-              {
-                data.website
-                &&
-                <a className={styles.websiteLink} href={data.website} target='_blank'>Visit website</a>
-              }
+      <div className={styles.workInfo}>
+        <div className={styles.titleShadow}>{data.title}</div>
+        <div className={styles.topContainer}>
+          <Line />
+          <div className={styles.topInfo}>
+            <hgroup>
+              <h1>{data.title}</h1>
+            </hgroup>
+            <div className={styles.container}>
+              <div className={styles.inner}>
+                {content
+                  ?
+                  <ReactMarkdown source={content} />
+                  : 'loading'}
+                {
+                  data.website
+                  &&
+                  <a className={styles.websiteLink} href={data.website} target='_blank'>Visit website</a>
+                }
+              </div>
+              <Sidebar {...data} />
             </div>
-            <Sidebar {...data} />
           </div>
         </div>
       </div>
-      <div className={styles.images}>
-        <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
+      <div className={styles.workImages}>
+        <div className={styles.images}>
+          <ReactMarkdown source={images.content} renderers={{ image: Img, paragraph: P }} />
+        </div>
       </div>
     </article>
     <NextWork nextSlug={nextSlug} />

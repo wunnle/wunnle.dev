@@ -7,15 +7,14 @@ html {
 /* article */
 
 :root {
- --scrollY: 0px;
+  --scrollY: 0px;
 }
 
-
 .work {
-  width: 1200px;
+  width: 100%;
   max-width: 100%;
-  margin: 30px auto 200px;
-  padding: 40px 16px 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -25,14 +24,14 @@ html {
   color: #282c35;
   letter-spacing: -0.03em;
   margin-bottom: 0;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .work hgroup {
   position: relative;
 }
 
-.work .titleShadow  {
+.work .titleShadow {
   will-change: transform;
   font-size: 160px;
   color: rgba(148, 151, 158, 0.055);
@@ -42,7 +41,7 @@ html {
   left: 200px;
   top: 0;
   left: 0;
-  padding-left: 200px;  
+  padding-left: 200px;
   transform: translateY(calc(20% - (var(--scrollY) / 3)));
   transform-origin: left center;
   /* transition: transform 0.03s ease; */
@@ -50,8 +49,6 @@ html {
   white-space: nowrap;
   overflow: hidden;
 }
-
-
 
 .container {
   display: flex;
@@ -63,17 +60,6 @@ html {
 @media screen and (max-width: 1100px) {
   .container {
     flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .inner {
-    padding-left: 24px;
-    margin-left: 10px;
-  }
-
-  .work h1 {
-    margin-left: 10px;
   }
 }
 
@@ -92,6 +78,10 @@ img {
   vertical-align: middle;
 }
 
+.workInfo {
+  padding-top: 50px;
+}
+
 .work h1,
 .work h2,
 .work p {
@@ -107,6 +97,11 @@ img {
   margin-bottom: 47px;
 }
 
+.workImages {
+  background: rgba(148, 151, 158, 0.1);
+  margin-top: 80px;
+}
+
 .images {
   display: flex;
   flex-wrap: wrap;
@@ -115,11 +110,14 @@ img {
   max-width: 100%;
   margin: auto;
   margin-top: -45px;
+  position: relative;
+  top: -80px;
 }
 
 @media screen and (max-width: 1100px) {
   .images {
     justify-content: center;
+    top: 24px;
   }
 }
 
@@ -180,25 +178,49 @@ img {
 .topContainer {
   display: flex;
   margin-left: -60px;
+  width: 1290px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .topContainer {
+    padding: 0 90px 0 40px;
+    box-sizing: border-box;
+  }
 }
 
 .inner {
   margin-top: 24px;
   box-sizing: border-box;
   padding-bottom: 120px;
-  max-width: 633px
+  max-width: 633px;
+}
+
+@media screen and (max-width: 1100px) {
+  .inner {
+    padding-left: 0;
+    margin-left: 0;
+    padding-bottom: 50px;
+  }
+
+  .work h1 {
+    margin-left: 0;
+    margin-top: -22px;
+  }
 }
 
 .topInfo {
   width: 100%;
   margin: auto;
   margin-left: 100px;
+  margin-right: 100px;
 }
 
 @media screen and (max-width: 1100px) {
   .topInfo {
-    width: 600px;
-    max-width: 100%;
+    margin-right: 0;
+    margin-left: 40px;
   }
 }
 

@@ -11,4 +11,11 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    padding: 0px 68px;
+  }
 }
