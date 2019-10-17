@@ -21,7 +21,7 @@ body {
 
 @media screen and (max-width: 600px) {
   :root {
-    --bigBodySize: 23px;
+    --bigBodySize: 20px;
     --h1Size: 28px;
     --smallBodySize: 18px;
     --sidebarSize: 14px;

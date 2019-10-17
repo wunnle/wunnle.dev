@@ -22,10 +22,10 @@
 @media screen and (max-width: 600px) {
   .header {
     padding: 0px 22px;
-    height: 60px;
+    height: 50px;
   }
 
   .header img {
-    width: 110px;
+    width: 100px;
   }
 }
