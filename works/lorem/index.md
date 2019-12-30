@@ -1,7 +1,10 @@
 ---
-title: "Example post: Lorem"
-date: 13-11-2018
-writtenBy: Sinan Aksay
+title: 'Lorem'
+year: 2017
+client: SwayPay
+services: 'Front-end development, UI/UX design'
+tech: 'React, HTML5, CSS3, Figma'
+website: 'https://www.savibook.com/comfortkh/dUM'
 ---
 ## Example post: Lorem
 

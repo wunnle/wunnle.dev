@@ -1,0 +1,68 @@
+.card {
+  border-radius: 3px;
+  width: 1000px;
+  display: flex;
+  height: 400px;
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.18);
+}
+
+.card + .card {
+  margin-top: 30px;
+}
+
+.info {
+  margin-left: auto;
+  width: 400px;
+  color: white;
+  padding-top: 60px;
+  padding-right: 80px;
+  padding-bottom: 60px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0;
+}
+
+.date {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.services {
+  list-style: none;
+  margin-top: 40px;
+}
+
+.services li {
+  opacity: 0.8;
+}
+
+.services li + li {
+  margin-top: 5px;
+}
+
+.tech {
+  margin-top: auto;
+  display: flex;
+}
+
+.techIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech img {
+  height: 30px;
+}
