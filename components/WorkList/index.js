@@ -1,28 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import WorksContext from '../../Works.Context';
-import WorkCard from './WorkCard';
+import WorksContext from '../../Works.Context'
+import WorkCard from './WorkCard'
 
 const WorkList = () => {
-  const works = useContext(WorksContext);
-
-  console.log({ works });
+  const works = useContext(WorksContext)
 
   return (
     <>
       <h1>Selected works</h1>
-      {works &&
-        works.map((p, i) => (
-          <WorkCard key={p.slug} index={i} {...p} />
-          // <Link href={`/work/${p.slug}`} key={p.slug}>
-          //   <a className={styles.pageLink}>
-          //     <h2>{p.document.data.title}</h2>
-          //     <span>{p.document.data.year}</span>
-          //   </a>
-          // </Link>
-        ))}
+      {works && works.map((p, i) => <WorkCard key={p.slug} index={i} {...p} />)}
     </>
-  );
-};
+  )
+}
 
-export default WorkList;
+export default WorkList

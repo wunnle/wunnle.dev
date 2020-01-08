@@ -21,7 +21,8 @@ module.exports = {
             "trailingComma": "none",
             "singleQuote": true,
             "printWidth": 90,
-            "endOfLine":"auto"
+            "endOfLine":"auto",
+            "semi": false
           }
         ],
         "react-hooks/rules-of-hooks": "error",
@@ -39,6 +40,7 @@ module.exports = {
         "simple-import-sort/sort": "error",
         "max-len": 0,
         "multiline-ternary": ["error", "always-multiline"],
-        "no-console": 0
+        "no-console": 0,
+        "semi": ["error", "never"]
       }
 };

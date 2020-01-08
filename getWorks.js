@@ -1,28 +1,31 @@
-import matter from 'gray-matter';
+import matter from 'gray-matter'
 
 async function getWorks() {
-
-  return new Promise((resolve) => {
-
-    const pages = (ctx => {
-      const keys = ctx.keys();
-      const values = keys.map(ctx);
+  return new Promise(resolve => {
+    function getPages(indexCtx, imagesCtx) {
+      const keys = indexCtx.keys()
+      const values = keys.map(indexCtx)
       const data = keys.map((key, index) => {
-        // Create slug from filename
-        const slug = key.match(/\/(.+)\/index/, '')[1];
-        const value = values[index];
-        // Parse document
-        const document = matter(value.default);
+        const slug = key.match(/\/(.+)\/index/, '')[1]
+        const value = values[index]
+        const document = matter(value.default)
+        const images = matter(imagesCtx.keys().map(imagesCtx)[index].default)
+
         return {
           document,
-          slug
-        };
-      });
-      return data;
-    })(require.context('./works', true, /\index.md$/));
+          slug,
+          images
+        }
+      })
+      return data
+    }
+
+    const pages = getPages(
+      require.context('./works', true, /index.md$/),
+      require.context('./works', true, /images.md$/)
+    )
 
     resolve(pages)
-
   })
 }
 
