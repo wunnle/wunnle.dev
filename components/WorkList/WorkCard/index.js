@@ -21,9 +21,6 @@ const WorkCard = props => {
   return (
     <Link href={`/work/${slug}`}>
       <div className={styles.card} style={{ background: bgColors[index % 4] }}>
-        <div className={styles.images}>
-          <img src={featuredImg} alt={title} />
-        </div>
         <div className={styles.info}>
           <p className={styles.date}>{year}</p>
           <h1 className={styles.title}>{title}</h1>
@@ -39,6 +36,9 @@ const WorkCard = props => {
               </div>
             ))}
           </div>
+        </div>
+        <div className={styles.images}>
+          <img src={featuredImg} alt={title} />
         </div>
       </div>
     </Link>

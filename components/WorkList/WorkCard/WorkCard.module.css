@@ -1,10 +1,11 @@
 .card {
   border-radius: 3px;
-  width: 1000px;
+  width: 880px;
   display: flex;
-  height: 400px;
+  height: 440px;
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.18);
   cursor: pointer;
+  margin: auto;
 }
 
 .card + .card {
@@ -13,10 +14,10 @@
 
 .info {
   margin-left: auto;
-  width: 455px;
+  width: 400px;
   color: white;
   padding-top: 60px;
-  padding-right: 80px;
+  padding-right: 0;
   padding-bottom: 60px;
   height: 100%;
   box-sizing: border-box;
@@ -28,7 +29,7 @@
 .title {
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 38px;
   line-height: 44px;
   margin: 0;
 }
@@ -72,14 +73,14 @@
 .images {
   display: flex;
   align-items: flex-start;
-  padding: 20px;
+  padding: 0;
   overflow: hidden;
   position: relative;
   flex: 1;
 }
 
 .images img {
-  max-height: 588px;
+  max-width: 100%;
   border-radius: 3px;
   box-shadow: 0px 3.32378px 20.6857px rgba(0, 0, 0, 0.2);
 }

@@ -1,7 +1,7 @@
 ---
-title: 'AutoInvite'
-year: 2019
-client: SwayPay
+title: 'Janbala'
+year: 2017
+client: Travaa
 services: 'Front-end development, UI/UX design'
 tech: 'React, HTML5, CSS3, Figma'
 website: 'https://www.savibook.com/comfortkh/dUM'

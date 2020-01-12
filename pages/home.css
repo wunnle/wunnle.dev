@@ -3,5 +3,9 @@
   margin: 100px auto 200px;
   padding: 0 16px;
   box-sizing: border-box;
-  width: 1000px;
+  width: 880px;
+}
+
+h1 {
+  margin-bottom: 30px;
 }

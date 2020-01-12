@@ -8,7 +8,7 @@ const WorkList = () => {
 
   return (
     <>
-      <h1>Selected works</h1>
+      <h1>Recent works</h1>
       {works && works.map((p, i) => <WorkCard key={p.slug} index={i} {...p} />)}
     </>
   )
