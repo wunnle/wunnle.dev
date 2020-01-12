@@ -1,12 +1,11 @@
 ---
 title: 'Janbala'
-date: 2017-01-01
+date: 2016-01-01
 client: Travaa
 services: 'Front-end development, UI/UX design'
-tech: 'React, HTML5, CSS3, Figma'
+tech: 'HTML5, CSS3, Photoshop'
 website: 'https://www.savibook.com/comfortkh/dUM'
-featuredImg: '/static/autoinvite/home.jpg'
-featuredImg2: '/static/autoinvite/rate.jpg'
+featuredImg: '/static/janbala/preview.png'
 ---
 ## Culpa tempor velit voluptate velit irure adipisicing dolore sit ut ex fugiat ullamco culpa qui. Reprehenderit cons.
 
