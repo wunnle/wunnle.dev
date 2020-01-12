@@ -1,6 +1,6 @@
 ---
 title: 'Savibook'
-year: 2019
+date: 2019-01-01
 client: SwayPay
 services: 'Front-end development, UI/UX design'
 tech: 'React, HTML5, CSS3, Figma'

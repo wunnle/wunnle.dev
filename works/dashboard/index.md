@@ -1,6 +1,6 @@
 ---
 title: 'SwayPay Dashboard'
-year: 2019
+date: 2019-12-01
 client: SwayPay
 services: 'Front-end development, UI/UX design'
 tech: 'React, Redux, HTML5, CSS3, Figma'

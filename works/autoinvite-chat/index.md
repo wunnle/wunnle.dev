@@ -1,6 +1,6 @@
 ---
 title: 'AutoInvite chat'
-year: 2019
+date: 2020-1-1
 client: SwayPay
 services: 'Front-end development, UI/UX design'
 tech: 'React, Redux, HTML5, CSS3, Figma'

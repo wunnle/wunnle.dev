@@ -12,7 +12,7 @@ const WorkCard = props => {
     index,
     slug,
     document: {
-      data: { title, year, services, tech, featuredImg }
+      data: { title, date, services, tech, featuredImg }
     }
   } = props
 
@@ -22,7 +22,7 @@ const WorkCard = props => {
     <Link href={`/work/${slug}`}>
       <div className={styles.card} style={{ background: bgColors[index % 4] }}>
         <div className={styles.info}>
-          <p className={styles.date}>{year}</p>
+          <p className={styles.date}>{new Date(date).getFullYear()}</p>
           <h1 className={styles.title}>{title}</h1>
           <div className={styles.services}>
             {services.split(', ').map((s, i) => (

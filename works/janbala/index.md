@@ -1,6 +1,6 @@
 ---
 title: 'Janbala'
-year: 2017
+date: 2017-01-01
 client: Travaa
 services: 'Front-end development, UI/UX design'
 tech: 'React, HTML5, CSS3, Figma'
