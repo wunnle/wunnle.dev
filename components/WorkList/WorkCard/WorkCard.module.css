@@ -6,6 +6,12 @@
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.18);
   cursor: pointer;
   margin: auto;
+  transition: transform 0.24s cubic-bezier(0.18, 0.89, 0.4, 1.03), box-shadow 0.2s ease-in;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
 }
 
 .card + .card {
