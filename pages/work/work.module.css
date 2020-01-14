@@ -223,10 +223,10 @@ img {
 }
 
 .inner {
-  margin-top: 24px;
+  margin-top: 21px;
   box-sizing: border-box;
   padding-bottom: 80px;
-  max-width: 633px;
+  max-width: 760px;
 }
 
 @media screen and (max-width: 1100px) {

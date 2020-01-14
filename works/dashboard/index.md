@@ -8,6 +8,6 @@ website: 'https://dashboard.swaypay.io'
 featuredImg: '/static/dashboard/preview.png'
 ---
 
-## Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto obcaecati, molestias maxime placeat consectetur natus porro quae blanditiis.
+## SwayPay is customer relationship management solution for hotels to increase their reach and contact the thousands of guests with ease. The dashboard works as a hub, where hoteliers can configure automated campaigns, read and reply guest reviews and track conversions & traffic. Personalized messages can be sent over multiple channels at the best time predicted by Swaypay AI.
 
-I’m working on front-end web development and UI/UX design for 8 years. I’m experienced in HTML5, JS and CSS3 and passionate about creating modern web applications.
+I’ve been actively working on both design and development of the dashboard as we continue to add new features and improvements to SwayPay.
