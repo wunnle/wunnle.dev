@@ -6,13 +6,15 @@ import WorkList from '../components/WorkList'
 import styles from './home.css'
 
 const Home = () => (
-  <div className={styles.home}>
-    <Head>
-      <title>Home</title>
-      <link href="/static/common.css" rel="stylesheet" />
-    </Head>
+  <div>
     <Header />
-    <WorkList />
+    <div className={styles.home}>
+      <Head>
+        <title>Home</title>
+        <link href="/static/common.css" rel="stylesheet" />
+      </Head>
+      <WorkList />
+    </div>
   </div>
 )
 

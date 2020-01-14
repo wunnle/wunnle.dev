@@ -1,7 +1,9 @@
-![Home](/static/autoinvite/home.jpg)
+![Analytics](/static/dashboard/analytics.jpg)
 
-![Revieews](/static/autoinvite/rate.jpg)
+![Editing texts](/static/dashboard/text.jpg)
 
-![Review success](/static/autoinvite/review.jpg)
+![Billing management](/static/dashboard/billing.jpg)
 
-![Share](/static/autoinvite/share.jpg)
+![Permissions](/static/dashboard/permissions.jpg)
+
+![Guests](/static/dashboard/guests.jpg)

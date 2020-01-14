@@ -81,7 +81,7 @@ img {
 @keyframes workInfoAnim {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
@@ -92,7 +92,7 @@ img {
 .workInfo {
   padding-top: 40px;
   opacity: 0;
-  animation: workInfoAnim cubic-bezier(0.68, 0.1, 0.28, 0.74) 0.18s;
+  animation: workInfoAnim 0.25s cubic-bezier(0.37, 1.05, 1, 1) 0.3s;
   animation-fill-mode: forwards;
 }
 
@@ -106,9 +106,23 @@ img {
   margin-bottom: 47px;
 }
 
+@keyframes workImagesAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .workImages {
   background: rgba(148, 151, 158, 0.1);
   margin-top: 80px;
+  opacity: 0;
+  animation: workImagesAnim 0.35s cubic-bezier(0.37, 1.05, 1, 1) 0.8s;
+  animation-fill-mode: forwards;
 }
 
 @media screen and (max-width: 600px) {
@@ -130,7 +144,7 @@ img {
   width: 1090px;
   max-width: 100%;
   margin: auto;
-  margin-top: -30px;
+  margin-top: 0px;
   position: relative;
   top: -80px;
 }
@@ -146,7 +160,7 @@ img {
   margin: 45px 0;
   max-width: 100%;
   box-sizing: border-box;
-  transition: transform 0.2s ease-in, background-color 0.25s ease-in, transform 0.25s cubic-bezier(0.37, 1.05, 1, 1), box-shadow 0.1s ease;
+  transition: background-color 0.25s ease-in, transform 0.25s cubic-bezier(0.37, 1.05, 1, 1), box-shadow 0.1s ease;
   border-radius: 3px;
   transform: translateY(80px);
 }
