@@ -14,11 +14,11 @@ html {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 50px 0 0;
   box-sizing: border-box;
 }
 
-.work h1 {
+.workTitle {
   font-size: var(--h1Size);
   line-height: 1.05em;
   color: #282c35;
@@ -31,7 +31,7 @@ html {
   position: relative;
 }
 
-.work .titleShadow {
+.titleShadow {
   will-change: transform;
   font-size: 160px;
   color: rgba(148, 151, 158, 0.055);
@@ -78,16 +78,25 @@ img {
   vertical-align: middle;
 }
 
+@keyframes workInfoAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .workInfo {
   padding-top: 40px;
+  opacity: 0;
+  animation: workInfoAnim cubic-bezier(0.68, 0.1, 0.28, 0.74) 0.18s;
+  animation-fill-mode: forwards;
 }
 
-.work h1,
-.work h2,
-.work p {
-}
-
-.work h2 {
+.workWrapper h2 {
   font-size: var(--bigBodySize);
   font-weight: 600;
   line-height: 149.7%;
@@ -189,18 +198,6 @@ img {
 
 .imgContainerAnim {
   transform: translateY(0);
-}
-
-.nextProject {
-  padding: 100px 0;
-  text-align: center;
-  font-weight: 600;
-  font-size: 24px;
-  height: 400px;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  margin-bottom: 80px;
 }
 
 .topContainer {

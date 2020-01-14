@@ -1,0 +1,35 @@
+.nextProjectContainer {
+  padding-bottom: 40px;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+
+.nextProject {
+  margin-left: -60px;
+  margin: auto;
+  height: 100px;
+  font-size: 24px;
+  font-style: italic;
+  background: #68a5ec;
+  color: white;
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.nextProjectInner {
+  width: 1290px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nextProjectChildren {
+  padding: 50px 0;
+  transition: opacity 0.1s ease-in;
+  height: 100vh;
+  box-sizing: border-box;
+}
