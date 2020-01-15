@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import WorksContext from '../../Works.Context'
 import Footer from '../Footer'
 import Header from '../Header'
+import Intro from '../Intro'
 import WorkCard from './WorkCard'
 
 const WorkList = () => {
@@ -10,10 +11,9 @@ const WorkList = () => {
     (a, b) => new Date(b.document.data.date) - new Date(a.document.data.date)
   )
 
-  console.log({ works })
-
   return (
     <>
+      <Intro />
       <h1>Recent works</h1>
       {works && works.map((p, i) => <WorkCard key={p.slug} index={i} {...p} />)}
       <Footer />

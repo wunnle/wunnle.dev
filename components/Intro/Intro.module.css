@@ -1,0 +1,70 @@
+.intro {
+  margin-bottom: 120px;
+  display: flex;
+  margin-top: 125px;
+}
+
+.longOne {
+  width: 470px;
+  font-size: calc(var(--smallBodySize) * 1.1);
+  line-height: 1.5em;
+  margin-left: auto;
+  color: #8f929a;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.longOne strong {
+  color: #5e6473;
+  font-weight: 700;
+}
+
+.longOne p {
+  margin-top: 0;
+}
+
+.longOne p + p {
+  margin-top: 10px;
+}
+
+.shortOne {
+  width: 40%;
+  max-width: 100%;
+}
+
+.greeting {
+  font-size: calc(var(--h1Size) * 1.2);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.myTitle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--bigBodySize) * 1.2);
+  line-height: 108.7%;
+  margin-top: 5px;
+  color: #4f5565;
+  line-height: 1.3em;
+}
+
+.helloButton {
+  color: #0079ff;
+  font-size: 24px;
+  background: none;
+  border: 2px solid #0079ff;
+  padding: 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  height: 52px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+}
+
+.helloButton:hover {
+  background: #0079ff;
+  color: white;
+}
