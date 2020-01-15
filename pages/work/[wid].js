@@ -1,5 +1,6 @@
 import matter from 'gray-matter'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
@@ -44,18 +45,23 @@ const WorkInfo = ({ data, data: { title, website }, content }) => (
   </div>
 )
 
-const Post = ({ images, slug }) => {
+const Post = () => {
   useScroll()
 
-  const works = useContext(WorksContext)
-  const currentIndex = works.findIndex(w => w.slug === slug)
   const {
-    document: { data, content }
-  } = works.find(w => w.slug === slug)
+    query: { wid }
+  } = useRouter()
+
+  const works = useContext(WorksContext)
+
+  const currentIndex = works.findIndex(w => w.slug === wid)
+
+  const {
+    document: { data, content },
+    images
+  } = works.find(w => w.slug === wid)
 
   const nextWork = works[currentIndex + 1] ? works[currentIndex + 1] : works[0]
-
-  console.log(nextWork)
 
   return (
     <>
@@ -123,21 +129,6 @@ const Img = ({ alt, src }) => {
       <img srcSet={`${src} 2x`} src={src} alt={alt} />
     </div>
   )
-}
-
-Post.getInitialProps = async function({ query }) {
-  const md = await import(`../../works/${query.wid}/index.md`)
-  const imd = await import(`../../works/${query.wid}/images.md`)
-  const work = matter(md.default)
-  const images = matter(imd.default)
-
-  return {
-    ...work,
-    images: {
-      ...images
-    },
-    slug: query.wid
-  }
 }
 
 export default Post
