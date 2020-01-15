@@ -2,6 +2,7 @@ import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 
+import Footer from '../components/Footer'
 import getWorks from '../getWorks'
 import WorksContext from '../Works.Context'
 
@@ -19,10 +20,12 @@ class MyApp extends App {
     return (
       <>
         <WorksContext.Provider value={works}>
-          <Head>
-            <link rel="shortcut icon" href="/static/favicon.ico" />
-          </Head>
-          <Component {...pageProps} />
+          <>
+            <Head>
+              <link rel="shortcut icon" href="/static/favicon.ico" />
+            </Head>
+            <Component {...pageProps} />
+          </>
         </WorksContext.Provider>
       </>
     )

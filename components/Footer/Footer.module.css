@@ -1,0 +1,44 @@
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  box-sizing: border-box;
+  width: 1200px;
+  max-width: 100%;
+  border-top: 1px solid #dedede;
+  padding: 0 20px;
+  margin-top: 80px;
+}
+
+.logoLink img {
+  width: 60px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-top: 6px;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li a + a {
+  margin-left: 14px;
+}
+
+.nav li a {
+  margin-left: 14px;
+}
+
+.nav li a img {
+  opacity: 0.4;
+  transition: opacity ease-in 0.2s;
+}
+
+.nav li a:hover img,
+.nav li a:active img {
+  opacity: 0.8;
+}

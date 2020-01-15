@@ -14,8 +14,14 @@ html {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 100px 0 0;
   box-sizing: border-box;
+  padding-top: 50px;
+}
+
+@media screen and (min-width: 1300px) {
+  .work {
+    padding: 100px 0 0;
+  }
 }
 
 .workTitle {
@@ -125,7 +131,7 @@ img {
   background: rgba(148, 151, 158, 0.1);
   margin-top: 80px;
   opacity: 0;
-  animation: workImagesAnim 0.35s cubic-bezier(0.37, 1.05, 1, 1) 0.8s;
+  animation: workImagesAnim 0.38s cubic-bezier(0.37, 1.05, 1, 1) 0.55s;
   animation-fill-mode: forwards;
 }
 
