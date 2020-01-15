@@ -1,7 +1,7 @@
 import matter from 'gray-matter'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
 
@@ -64,6 +64,14 @@ const Post = () => {
   } = works.find(w => w.slug === wid)
 
   const nextWork = works[currentIndex + 1] ? works[currentIndex + 1] : works[0]
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+
+    setTimeout(() => {
+      document.body.style.overflow = 'visible'
+    }, 500)
+  }, [])
 
   return (
     <>
