@@ -10,7 +10,7 @@ const Home = () => (
     <Header />
     <div className={styles.home}>
       <Head>
-        <title>Home</title>
+        <title>Portfolio</title>
         <link href="/static/common.css" rel="stylesheet" />
       </Head>
       <WorkList />

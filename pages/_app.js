@@ -1,4 +1,5 @@
 import App from 'next/app'
+import Head from 'next/head'
 import React from 'react'
 
 import getWorks from '../getWorks'
@@ -16,9 +17,14 @@ class MyApp extends App {
     const { Component, pageProps, works } = this.props
 
     return (
-      <WorksContext.Provider value={works}>
-        <Component {...pageProps} />
-      </WorksContext.Provider>
+      <>
+        <WorksContext.Provider value={works}>
+          <Head>
+            <link rel="shortcut icon" href="/static/favicon.ico" />
+          </Head>
+          <Component {...pageProps} />
+        </WorksContext.Provider>
+      </>
     )
   }
 }

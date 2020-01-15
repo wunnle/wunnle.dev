@@ -1,6 +1,5 @@
 .header .logo {
-  width: 130px;
-  margin-left: -4px;
+  width: 136px;
 }
 
 .headerInner {
@@ -25,11 +24,11 @@
   .headerInner {
     width: 100%;
     margin: auto;
-    height: 100px;
+    height: 110px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 50px;
+    padding: 0 30px;
   }
 }
 
