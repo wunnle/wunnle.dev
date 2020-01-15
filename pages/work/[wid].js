@@ -52,8 +52,6 @@ const Post = () => {
     query: { wid }
   } = useRouter()
 
-  console.log(wid)
-
   const works = useContext(WorksContext)
 
   const currentIndex = works.findIndex(w => w.slug === wid)
@@ -64,14 +62,6 @@ const Post = () => {
   } = works.find(w => w.slug === wid)
 
   const nextWork = works[currentIndex + 1] ? works[currentIndex + 1] : works[0]
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-
-    setTimeout(() => {
-      document.body.style.overflow = 'visible'
-    }, 500)
-  }, [])
 
   return (
     <>
