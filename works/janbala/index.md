@@ -4,7 +4,6 @@ date: 2016-01-01
 client: Travaa
 services: 'Front-end development, UI/UX design'
 tech: 'HTML5, CSS3, Photoshop'
-website: 'https://www.savibook.com/comfortkh/dUM'
 featuredImg: '/static/janbala/preview.png'
 ---
 ## Janbala.com, an online travel agency with flight and hotel booking options, was active until 2017, as a part of Travana. Booking flow was designed to maximize conversion, while also providing the users with all the information they need. At the time, Janbala had innovative features such as hotel searches on a map and one-click bookings from home page.
