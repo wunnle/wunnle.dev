@@ -10,7 +10,7 @@ import twitterLogo from './twitter.svg'
 const Footer = props => (
   <footer>
     <div className={styles.container}>
-      <Link href="/" className={styles.logoLink}>
+      <Link href="/">
         <img src={logomark} width="70px" alt="wunnle logo" />
       </Link>
       <nav className={styles.nav}>

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import styles from './NextWork.module.css'
@@ -16,7 +16,11 @@ const NextWork = ({ nextSlug, children }) => {
 
   useEffect(() => {
     if (intersectionRatio && intersectionRatio > 0.9) {
-      router.push(`/work/${nextSlug}`)
+      document.body.className = ''
+      window.scrollTo(0, 0)
+      setTimeout(() => {
+        router.push('/work/[wid]', `/work/${nextSlug}`, { shallow: true })
+      }, 400)
     }
   }, [intersectionRatio, nextSlug, router])
 

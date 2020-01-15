@@ -102,6 +102,9 @@ img {
 .workInfo {
   padding-top: 40px;
   opacity: 0;
+}
+
+.withAnim .workInfo {
   animation: workInfoAnim 0.35s cubic-bezier(0.37, 1.05, 1, 1) 0.1s;
   animation-fill-mode: forwards;
 }
@@ -131,6 +134,9 @@ img {
   background: rgba(148, 151, 158, 0.1);
   margin-top: 80px;
   opacity: 0;
+}
+
+.withAnim .workImages {
   animation: workImagesAnim 0.38s cubic-bezier(0.37, 1.05, 1, 1) 0.55s;
   animation-fill-mode: forwards;
 }

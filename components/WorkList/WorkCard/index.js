@@ -16,31 +16,31 @@ const WorkCard = props => {
     }
   } = props
 
-  console.log({ featuredImg })
-
   return (
-    <Link href={`/work/${slug}`}>
-      <div className={styles.card} style={{ background: bgColors[index % 4] }}>
-        <div className={styles.info}>
-          <p className={styles.date}>{new Date(date).getFullYear()}</p>
-          <h1 className={styles.title}>{title}</h1>
-          <div className={styles.services}>
-            {services.split(', ').map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
+    <Link href="/work/[wid]" as={`/work/${slug}`}>
+      <a>
+        <div className={styles.card} style={{ background: bgColors[index % 4] }}>
+          <div className={styles.info}>
+            <p className={styles.date}>{new Date(date).getFullYear()}</p>
+            <h1 className={styles.title}>{title}</h1>
+            <div className={styles.services}>
+              {services.split(', ').map((s, i) => (
+                <li key={i}>{s}</li>
+              ))}
+            </div>
+            <div className={styles.tech}>
+              {tech.split(', ').map(t => (
+                <div key={t} className={styles.techIcon}>
+                  <Icon white>{t}</Icon>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={styles.tech}>
-            {tech.split(', ').map(t => (
-              <div key={t} className={styles.techIcon}>
-                <Icon white>{t}</Icon>
-              </div>
-            ))}
+          <div className={styles.images}>
+            <img src={featuredImg} alt={title} />
           </div>
         </div>
-        <div className={styles.images}>
-          <img src={featuredImg} alt={title} />
-        </div>
-      </div>
+      </a>
     </Link>
   )
 }
