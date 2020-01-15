@@ -52,6 +52,8 @@ const Post = () => {
     query: { wid }
   } = useRouter()
 
+  console.log(wid)
+
   const works = useContext(WorksContext)
 
   const currentIndex = works.findIndex(w => w.slug === wid)

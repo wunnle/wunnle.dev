@@ -14,7 +14,7 @@ html {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 50px 0 0;
+  padding: 100px 0 0;
   box-sizing: border-box;
 }
 
@@ -80,8 +80,11 @@ img {
 
 @keyframes workInfoAnim {
   0% {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 0.1;
+    transform: translateY(80px);
+  }
+  50% {
+    opacity: 0.3;
   }
   100% {
     opacity: 1;
@@ -92,7 +95,7 @@ img {
 .workInfo {
   padding-top: 40px;
   opacity: 0;
-  animation: workInfoAnim 0.25s cubic-bezier(0.37, 1.05, 1, 1) 0.3s;
+  animation: workInfoAnim 0.35s cubic-bezier(0.37, 1.05, 1, 1) 0.1s;
   animation-fill-mode: forwards;
 }
 

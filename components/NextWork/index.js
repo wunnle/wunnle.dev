@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
@@ -37,6 +38,11 @@ const NextWork = ({ nextSlug, children }) => {
       </div>
     </div>
   )
+}
+
+NextWork.propTypes = {
+  nextSlug: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default NextWork
