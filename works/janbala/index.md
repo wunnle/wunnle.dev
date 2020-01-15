@@ -7,7 +7,8 @@ tech: 'HTML5, CSS3, Photoshop'
 website: 'https://www.savibook.com/comfortkh/dUM'
 featuredImg: '/static/janbala/preview.png'
 ---
-## Culpa tempor velit voluptate velit irure adipisicing dolore sit ut ex fugiat ullamco culpa qui. Reprehenderit cons.
+## Janbala.com, an online travel agency with flight and hotel booking options, was active until 2017, as a part of Travana. Booking flow was designed to maximize conversion, while also providing the users with all the information they need. At the time, Janbala had innovative features such as hotel searches on a map and one-click bookings from home page.
 
-I’m working on front-end web development and UI/UX design for 8 years. I’m experienced in HTML5, JS and CSS3 and passionate about creating modern web applications.
+I started as a UI/UX designer on Janbala. Later I worked as a UX developer, both working on front-end and acting as a bridge between design and development teams.
+
 
