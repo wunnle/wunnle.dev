@@ -1,6 +1,7 @@
 .card {
   border-radius: 3px;
   width: 880px;
+  max-width: 100%;
   display: flex;
   height: 440px;
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.18);
@@ -8,6 +9,19 @@
   margin: auto;
   transition: transform 0.24s cubic-bezier(0.18, 0.89, 0.4, 1.03), box-shadow 0.2s ease-in;
   text-decoration: none;
+}
+
+@media screen and (max-width: 880px) {
+  .card {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    height: 340px;
+  }
 }
 
 .card:hover {
@@ -33,10 +47,22 @@
   padding-left: 60px;
 }
 
+@media screen and (max-width: 880px) {
+  .info {
+    padding-top: 40px;
+    padding-right: 0;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    width: 350px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
 .title {
   font-style: normal;
   font-weight: bold;
-  font-size: 38px;
+  font-size: calc(var(--h1Size) * 0.9);
   line-height: 44px;
   margin: 0;
 }
@@ -50,6 +76,12 @@
 .services {
   list-style: none;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .services {
+    margin-top: 30px;
+  }
 }
 
 .services li {
@@ -86,8 +118,23 @@
   flex: 1;
 }
 
+@media screen and (max-width: 880px) {
+  .images {
+    position: absolute;
+    height: 100%;
+    left: 320px;
+  }
+}
+
 .images img {
   max-width: 100%;
   border-radius: 3px;
   box-shadow: 0px 3.32378px 20.6857px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 880px) {
+  .images img {
+    max-width: none;
+    height: 100%;
+  }
 }

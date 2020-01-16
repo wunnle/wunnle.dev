@@ -4,6 +4,22 @@
   margin-top: 125px;
 }
 
+@media screen and (max-width: 880px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro {
+    padding: 0 20px;
+  }
+}
+
 .longOne {
   width: 470px;
   font-size: calc(var(--smallBodySize) * 1.1);
@@ -12,6 +28,13 @@
   color: #8f929a;
   font-weight: 500;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 880px) {
+  .longOne {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 
 .longOne strong {
@@ -32,6 +55,13 @@
   max-width: 100%;
 }
 
+@media screen and (max-width: 880px) {
+  .shortOne {
+    margin: 40px auto;
+    width: 100%;
+  }
+}
+
 .greeting {
   font-size: calc(var(--h1Size) * 1.2);
   font-weight: 700;
@@ -50,6 +80,12 @@
   line-height: 1.3em;
 }
 
+@media screen and (max-width: 880px) {
+  .myTitle br {
+    display: none;
+  }
+}
+
 .helloButton {
   color: #0079ff;
   font-size: 24px;
@@ -62,6 +98,13 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.15s ease-in, color 0.15s ease-in;
+}
+
+@media screen and (max-width: 700px) {
+  .helloButton {
+    height: 42px;
+    font-size: 18px;
+  }
 }
 
 .helloButton:hover {

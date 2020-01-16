@@ -14,7 +14,12 @@ const Header = () => (
       <nav className={styles.nav}>
         <a href="https://blog.wunnle.com/">Blog</a>
         <a href="https://wunnle.dev/">Portfolio</a>
-        <a href="mailto:me@wunnle.com" target="_blank" rel="noopener noreferrer">
+        <a
+          className={styles.contactLink}
+          href="mailto:me@wunnle.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Contact
         </a>
       </nav>

@@ -10,7 +10,13 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 30px;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .intro {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (min-width: 1300px) {
@@ -69,4 +75,10 @@
 
 .active {
   font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .contactLink {
+    display: none;
+  }
 }

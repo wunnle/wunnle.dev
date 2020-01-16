@@ -25,6 +25,18 @@
   height: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  .nextProject {
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nextProjectInner {
+    justify-content: center;
+  }
+}
+
 .nextProjectChildren {
   padding: 280px 0 0;
   transition: opacity 0.1s ease-in;
