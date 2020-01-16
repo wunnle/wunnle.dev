@@ -19,7 +19,7 @@ const Intro = () => (
         I’m an Istanbul based front-end developer and designer, working with companies
         worldwide for over 10 years. I’m experienced in <strong>HTML5</strong>,{' '}
         <strong>JS</strong> and <strong>CSS3</strong> and modern libraries{' '}
-        <strong>React</strong>, <strong>Gatby </strong>
+        <strong>React</strong>, <strong>Gatsby </strong>
         and <strong>Next.js</strong>.
       </p>
 
