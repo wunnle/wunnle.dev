@@ -1,7 +1,7 @@
 ---
 title: 'Janbala'
 date: 2016-01-01
-client: Travaa
+client: Travana
 services: 'Front-end development, UI/UX design'
 tech: 'HTML5, CSS3, Photoshop'
 featuredImg: '/static/janbala/preview.png'
