@@ -1,9 +1,7 @@
-![Analytics](/static/dashboard/analytics.jpg)
+![new landing page](/static/savibook/new-landing1.jpg)
 
-![Editing texts](/static/dashboard/text.jpg)
+![new landing page 2](/static/savibook/new-landing2.jpg)
 
-![Billing management](/static/dashboard/billing.jpg)
+![new landing page 2](/static/savibook/review.jpg)
 
-![Permissions](/static/dashboard/permissions.jpg)
-
-![Guests](/static/dashboard/guests.jpg)
+![new landing page 2](/static/savibook/share.jpg)

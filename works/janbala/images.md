@@ -1,9 +1,9 @@
-![Analytics](/static/dashboard/analytics.jpg)
+![Location based home page](/static/janbala/paris-home.jpg)
 
-![Editing texts](/static/dashboard/text.jpg)
+![Istanbul based home page](/static/janbala/home.jpg)
 
-![Billing management](/static/dashboard/billing.jpg)
+![Ininerary](/static/janbala/itinerary.jpg)
 
-![Permissions](/static/dashboard/permissions.jpg)
+![Another ininerary screen](/static/janbala/itinerary2.jpg)
 
-![Guests](/static/dashboard/guests.jpg)
+![Flight search ui](/static/janbala/flight-home.jpg)
