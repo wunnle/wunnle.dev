@@ -1,5 +1,6 @@
 import matter from 'gray-matter'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
@@ -130,12 +131,18 @@ const Img = ({ alt, src }) => {
   }
 
   return (
-    <div
-      className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')}
-      ref={ref}
-    >
-      <img srcSet={`${src} 2x`} src={src} alt={alt} />
-    </div>
+    <Link href={src}>
+      <a target="_blank" rel="noopener noreferrer">
+        <div
+          className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(
+            ' '
+          )}
+          ref={ref}
+        >
+          <img srcSet={`${src} 2x`} alt={alt} />
+        </div>
+      </a>
+    </Link>
   )
 }
 
