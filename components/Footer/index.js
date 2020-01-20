@@ -7,9 +7,9 @@ import githubLogo from './github.svg'
 import logomark from './logomark.svg'
 import twitterLogo from './twitter.svg'
 
-const Footer = props => (
+const Footer = ({ noBorder }) => (
   <footer>
-    <div className={styles.container}>
+    <div className={noBorder ? styles.containerNoBorder : styles.container}>
       <Link href="/">
         <img src={logomark} width="70px" alt="wunnle logo" />
       </Link>

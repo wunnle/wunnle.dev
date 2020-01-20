@@ -1,3 +1,7 @@
+.workContainer {
+  margin-bottom: 100px;
+}
+
 @media screen and (max-width: 880px) {
   .workContainer {
     padding: 0 30px;

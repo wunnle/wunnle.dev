@@ -5,6 +5,7 @@ import { useContext, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
 
+import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import useScroll from '../../components/hooks/useScroll'
 import Line from '../../components/Line'
@@ -87,9 +88,10 @@ const Post = () => {
           </div>
         </div>
       </article>
-      <NextWork nextSlug={nextWork.slug}>
+      {/* <NextWork nextSlug={nextWork.slug}>
         <WorkInfo data={nextWork.document.data} content={nextWork.document.content} />
-      </NextWork>
+      </NextWork> */}
+      <Footer noBorder />
     </>
   )
 }

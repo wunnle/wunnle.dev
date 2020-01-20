@@ -100,7 +100,7 @@ img {
 }
 
 .workInfo {
-  padding-top: 40px;
+  padding-top: 25px;
   opacity: 0;
 }
 
@@ -134,6 +134,7 @@ img {
   background: rgba(148, 151, 158, 0.1);
   margin-top: 80px;
   opacity: 0;
+  min-height: 600px;
 }
 
 .withAnim .workImages {
@@ -173,7 +174,7 @@ img {
 }
 
 .imgContainer {
-  margin: 45px 0;
+  margin: 25px 0;
   max-width: 100%;
   box-sizing: border-box;
   transition: background-color 0.25s ease-in, transform 0.25s cubic-bezier(0.37, 1.05, 1, 1), box-shadow 0.1s ease;
@@ -256,7 +257,7 @@ img {
   margin-top: 21px;
   box-sizing: border-box;
   padding-bottom: 80px;
-  max-width: 760px;
+  max-width: 764px;
 }
 
 @media screen and (max-width: 1100px) {
