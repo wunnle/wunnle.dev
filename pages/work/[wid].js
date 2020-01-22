@@ -14,6 +14,7 @@ import NextWork from '../../components/NextWork'
 import Sidebar from '../../components/WorkSidebar'
 import WorksContext from '../../Works.Context'
 import styles from './work.module.css'
+import SEO from '../../components/SEO'
 
 const WorkInfo = ({ data, data: { title, website }, content }) => {
   return (
@@ -75,8 +76,8 @@ const Post = () => {
     <>
       <Head>
         <title>{data.title}</title>
-        <link href="/static/common.css" rel="stylesheet" />
       </Head>
+      <SEO title={data.title} description={content.trim().substring(0, 160)} image={data.featuredImg} />
       <Header />
       <article className={styles.work}>
         <WorkInfo data={data} content={content} />
