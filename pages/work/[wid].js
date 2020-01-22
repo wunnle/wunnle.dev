@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
+import removeMd from 'remove-markdown'
 
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
@@ -76,7 +77,7 @@ const Post = () => {
       </Head>
       <SEO
         title={data.title}
-        description={content.trim().substring(0, 160)}
+        description={removeMd(content.trim()).substring(0, 160)}
         image={data.featuredImg}
       />
       <Header />
