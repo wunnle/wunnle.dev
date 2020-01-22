@@ -1,4 +1,3 @@
-import matter from 'gray-matter'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -8,13 +7,11 @@ import ReactMarkdown from 'react-markdown'
 
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
-import useScroll from '../../components/hooks/useScroll'
 import Line from '../../components/Line'
-import NextWork from '../../components/NextWork'
+import SEO from '../../components/SEO'
 import Sidebar from '../../components/WorkSidebar'
 import WorksContext from '../../Works.Context'
 import styles from './work.module.css'
-import SEO from '../../components/SEO'
 
 const WorkInfo = ({ data, data: { title, website }, content }) => {
   return (
@@ -77,7 +74,11 @@ const Post = () => {
       <Head>
         <title>{data.title}</title>
       </Head>
-      <SEO title={data.title} description={content.trim().substring(0, 160)} image={data.featuredImg} />
+      <SEO
+        title={data.title}
+        description={content.trim().substring(0, 160)}
+        image={data.featuredImg}
+      />
       <Header />
       <article className={styles.work}>
         <WorkInfo data={data} content={content} />
