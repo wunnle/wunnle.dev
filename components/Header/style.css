@@ -60,8 +60,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #37383c;
-  opacity: 0.6;
+  color: rgba(55, 56, 60, 0.73);
   transition: opacity ease-in 0.2s;
 }
 

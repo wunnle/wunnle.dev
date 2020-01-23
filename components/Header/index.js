@@ -12,8 +12,7 @@ const Header = () => (
         </a>
       </Link>
       <nav className={styles.nav}>
-        <a href="https://blog.wunnle.com/">Blog</a>
-        <a href="https://wunnle.dev/">Portfolio</a>
+        <a href="https://wunnle.com/">Blog</a>
         <a
           className={styles.contactLink}
           href="mailto:me@wunnle.com"
