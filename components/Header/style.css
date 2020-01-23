@@ -61,11 +61,13 @@
 .nav a {
   text-decoration: none;
   color: rgba(55, 56, 60, 0.73);
+  opacity: 0.9;
   transition: opacity ease-in 0.2s;
+  font-size: 16px;
 }
 
 .nav a:hover {
-  opacity: 1;
+  color: #282c35;
 }
 
 .nav a + a {
