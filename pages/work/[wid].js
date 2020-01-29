@@ -8,6 +8,7 @@ import removeMd from 'remove-markdown'
 
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import Layout from '../../components/Layout'
 import Line from '../../components/Line'
 import SEO from '../../components/SEO'
 import Sidebar from '../../components/WorkSidebar'
@@ -16,35 +17,37 @@ import styles from './work.module.css'
 
 const WorkInfo = ({ data, data: { title, website }, content }) => {
   return (
-    <div className={styles.workWrapper}>
-      <div className={styles.workInfo}>
-        <div className={styles.titleShadow}>{title}</div>
-        <div className={styles.topContainer}>
-          <Line />
-          <div className={styles.topInfo}>
-            <hgroup>
-              <h1 className={styles.workTitle}>{title}</h1>
-            </hgroup>
-            <div className={styles.container}>
-              <div className={styles.inner}>
-                {content ? <ReactMarkdown source={content} /> : 'loading'}
-                {website && (
-                  <a
-                    className={styles.websiteLink}
-                    href={website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit website
-                  </a>
-                )}
+    <Layout>
+      <div className={styles.workWrapper}>
+        <div className={styles.workInfo}>
+          <div className={styles.titleShadow}>{title}</div>
+          <div className={styles.topContainer}>
+            <Line />
+            <div className={styles.topInfo}>
+              <hgroup>
+                <h1 className={styles.workTitle}>{title}</h1>
+              </hgroup>
+              <div className={styles.container}>
+                <div className={styles.inner}>
+                  {content ? <ReactMarkdown source={content} /> : 'loading'}
+                  {website && (
+                    <a
+                      className={styles.websiteLink}
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit website
+                    </a>
+                  )}
+                </div>
+                <Sidebar {...data} />
               </div>
-              <Sidebar {...data} />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 const Post = () => {

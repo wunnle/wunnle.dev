@@ -5121,6 +5121,11 @@ react-error-overlay@5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.6.tgz#0cd73407c5d141f9638ae1e0c63e7b2bf7e9929d"
 
+react-ga@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.7.0.tgz#24328f157f31e8cffbf4de74a3396536679d8d7c"
+  integrity sha512-AjC7UOZMvygrWTc2hKxTDvlMXEtbmA0IgJjmkhgmQQ3RkXrWR11xEagLGFGaNyaPnmg24oaIiaNPnEoftUhfXA==
+
 react-intersection-observer@^8.24.1:
   version "8.25.2"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.25.2.tgz#be165f4827dc8f1927ab68ecb837efe913d94909"
