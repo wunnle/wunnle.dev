@@ -21,7 +21,17 @@ const Intro = () => (
           <strong>React</strong>, <strong>Gatsby </strong>
           and <strong>Next.js</strong>.
         </p>
-
+        <p>
+          I’m also the organizer of{' '}
+          <a
+            href="https://kommunity.com/reactjs-istanbul"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ReactJS Istanbul
+          </a>
+          , a community for React developers in Istanbul
+        </p>
         <p>
           Currently working as design lead &amp; front-end dev on SwayPay, a startup from
           San Francisco.
