@@ -22,11 +22,10 @@
 
 .longOne {
   width: 470px;
-  font-size: calc(var(--smallBodySize) * 1.1);
-  line-height: 1.5em;
+  font-size: calc(var(--smallBodySize) * 1.05);
+  line-height: 1.6em;
   margin-left: auto;
-  color: #8f929a;
-  font-weight: 500;
+  color: #3f4146;
   margin-top: 10px;
 }
 
@@ -38,8 +37,8 @@
 }
 
 .longOne strong {
-  color: #5e6473;
-  font-weight: 700;
+  color: #46474a;
+  font-weight: 600;
 }
 
 .longOne p {
@@ -72,11 +71,11 @@
 
 .myTitle {
   font-style: normal;
-  font-weight: 600;
-  font-size: calc(var(--bigBodySize) * 1.2);
+  font-weight: 500;
+  font-size: calc(var(--bigBodySize) * 1.1);
   line-height: 108.7%;
   margin-top: 5px;
-  color: #4f5565;
+  color: #6d7777;
   line-height: 1.3em;
 }
 
