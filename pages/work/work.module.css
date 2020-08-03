@@ -15,7 +15,7 @@
 }
 
 .workTitle {
-  font-size: calc(var(--h1Size) * 1.4);
+  font-size: calc(var(--h1Size) * 1.3);
   line-height: 1.05em;
   color: #282c35;
   letter-spacing: -0.01em;
@@ -45,7 +45,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.5em;
-  font-size: var(--smallBodySize);
+  font-size: calc(var(--smallBodySize) * 1.15);
   color: #3b4c56;
   margin-bottom: 40px;
   margin-top: 0px;
@@ -228,7 +228,7 @@
   margin-top: 21px;
   box-sizing: border-box;
   padding-bottom: 80px;
-  max-width: 764px;
+  max-width: 740px;
 }
 
 @media screen and (max-width: 1100px) {
