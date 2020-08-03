@@ -1,9 +1,9 @@
-![Location based home page](/static/janbala/paris-home.jpg)
+![Location based home page](/janbala/paris-home.jpg)
 
-![Istanbul based home page](/static/janbala/home.jpg)
+![Istanbul based home page](/janbala/home.jpg)
 
-![Ininerary](/static/janbala/itinerary.jpg)
+![Ininerary](/janbala/itinerary.jpg)
 
-![Another ininerary screen](/static/janbala/itinerary2.jpg)
+![Another ininerary screen](/janbala/itinerary2.jpg)
 
-![Flight search ui](/static/janbala/flight-home.jpg)
+![Flight search ui](/janbala/flight-home.jpg)
