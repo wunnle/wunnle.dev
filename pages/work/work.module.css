@@ -278,7 +278,7 @@
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
-  background: url("./link-arrow.svg") right 12px center no-repeat;
+  background: url("/link-arrow.svg") right 12px center no-repeat;
   padding-right: 38px;
   transition: background-position cubic-bezier(0.39, 0.58, 0.57, 1) 0.07s;
   margin-top: 47px;
