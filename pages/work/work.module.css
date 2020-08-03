@@ -1,14 +1,4 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
 /* article */
-
-:root {
-  --scrollY: 0px;
-}
 
 .work {
   width: 100%;
@@ -25,36 +15,17 @@ html {
 }
 
 .workTitle {
-  font-size: var(--h1Size);
+  font-size: calc(var(--h1Size) * 1.4);
   line-height: 1.05em;
   color: #282c35;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin-bottom: 0;
   margin-top: -12px;
+  font-weight: 600;
 }
 
 .work hgroup {
   position: relative;
-}
-
-.titleShadow {
-  will-change: transform;
-  font-size: 160px;
-  color: rgba(148, 151, 158, 0.028);
-  position: fixed;
-  font-weight: 700;
-  z-index: -1;
-  left: 200px;
-  top: 0;
-  left: 0;
-  padding-left: 200px;
-  transform: translateY(calc(20% - (var(--scrollY) / 3)));
-  transform-origin: left center;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100vw;
-  box-sizing: border-box;
 }
 
 .container {
@@ -80,7 +51,7 @@ html {
   margin-top: 0px;
 }
 
-img {
+.work img {
   margin: 0;
   vertical-align: middle;
 }
@@ -111,7 +82,7 @@ img {
 
 .workWrapper h2 {
   font-size: var(--bigBodySize);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 149.7%;
   color: #282c35;
   margin: 0;
@@ -308,7 +279,7 @@ img {
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
-  background: url("./link-arrow.svg") right 12px center no-repeat;
+  background: url("/link-arrow.svg") right 12px center no-repeat;
   padding-right: 38px;
   transition: background-position cubic-bezier(0.39, 0.58, 0.57, 1) 0.07s;
   margin-top: 47px;

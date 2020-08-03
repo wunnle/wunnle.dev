@@ -8,7 +8,7 @@
   box-sizing: border-box;
   width: 1200px;
   max-width: 100%;
-  border-top: 1px solid #dedede;
+  border-top: 1px solid rgba(62, 62, 225, 0.12);
   padding: 0 20px;
   margin-top: 80px;
   margin: auto;

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
+import styles from './Header.module.css'
 import logo from './logo.svg'
-import styles from './style.css'
 
 const Header = () => (
   <header className={styles.header}>

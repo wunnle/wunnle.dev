@@ -61,7 +61,7 @@
 
 .title {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: calc(var(--h1Size) * 0.9);
   line-height: 44px;
   margin: 0;

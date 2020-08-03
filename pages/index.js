@@ -1,25 +1,18 @@
-import Head from 'next/head'
 import React from 'react'
 
 import Header from '../components/Header'
+import Home from '../components/Home'
+import Intro from '../components/Intro'
 import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import WorkList from '../components/WorkList'
-import styles from './home.css'
 
-const Home = () => (
+const Index = () => (
   <Layout>
     <div>
       <Header />
-      <div className={styles.home}>
-        <SEO
-          title="Wunnle | Portfolio"
-          description="Portfolio of Sinan, a web developer and UI/UX designer"
-        />
-        <WorkList />
-      </div>
+      <Intro />
+      <Home />
     </div>
   </Layout>
 )
 
-export default Home
+export default Index

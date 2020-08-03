@@ -1,9 +1,9 @@
-![Analytics](/static/dashboard/analytics.jpg)
+![Analytics](/dashboard/analytics.jpg)
 
-![Editing texts](/static/dashboard/text.jpg)
+![Editing texts](/dashboard/text.jpg)
 
-![Billing management](/static/dashboard/billing.jpg)
+![Billing management](/dashboard/billing.jpg)
 
-![Permissions](/static/dashboard/permissions.jpg)
+![Permissions](/dashboard/permissions.jpg)
 
-![Guests](/static/dashboard/guests.jpg)
+![Guests](/dashboard/guests.jpg)

@@ -5,16 +5,17 @@ body {
 :root {
   --black: #242121;
   --bigBodySize: 25px;
-  --h1Size: 42px;
-  --smallBodySize: 19px;
+  --h1Size: 44px;
+  --smallBodySize: 18px;
   --sidebarSize: 16px;
+  --linkColor: #0079ff;
 }
 
 @media screen and (max-width: 1100px) {
   :root {
     --bigBodySize: 27px;
     --h1Size: 40px;
-    --smallBodySize: 20px;
+    --smallBodySize: 19px;
     --sidebarSize: 16px;
   }
 }

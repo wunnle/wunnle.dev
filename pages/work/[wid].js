@@ -20,7 +20,6 @@ const WorkInfo = ({ data, data: { title, website }, content }) => {
     <Layout>
       <div className={styles.workWrapper}>
         <div className={styles.workInfo}>
-          <div className={styles.titleShadow}>{title}</div>
           <div className={styles.topContainer}>
             <Line />
             <div className={styles.topInfo}>
