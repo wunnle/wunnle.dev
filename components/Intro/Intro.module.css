@@ -1,8 +1,21 @@
 .intro {
-  margin-bottom: 120px;
+  margin: 125px auto 120px;
   display: flex;
-  margin-top: 125px;
+  box-sizing: border-box;
+  width: 880px;
+  max-width: 100%;
 }
+
+@media screen and (max-width: 850px) {
+  .intro {
+    margin-top: 20px;
+  }
+}
+
+.br {
+  border-bottom: 1px solid rgba(62, 62, 225, 0.12);
+}
+
 
 @media screen and (max-width: 880px) {
   .intro {
@@ -67,6 +80,7 @@
   letter-spacing: -0.04em;
   margin-bottom: 0;
   margin-top: 0;
+  color: var(--black);
 }
 
 .myTitle {

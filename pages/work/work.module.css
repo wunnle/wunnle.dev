@@ -15,12 +15,13 @@
 }
 
 .workTitle {
-  font-size: var(--h1Size);
+  font-size: calc(var(--h1Size) * 1.4);
   line-height: 1.05em;
   color: #282c35;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin-bottom: 0;
   margin-top: -12px;
+  font-weight: 600;
 }
 
 .work hgroup {
@@ -81,7 +82,7 @@
 
 .workWrapper h2 {
   font-size: var(--bigBodySize);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 149.7%;
   color: #282c35;
   margin: 0;

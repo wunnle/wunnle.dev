@@ -13,7 +13,6 @@ const WorkList = () => {
 
   return (
     <>
-      <Intro />
       <div className={styles.workContainer}>
         <h1 className={styles.title}>Recent works</h1>
         <div className={styles.workList}>

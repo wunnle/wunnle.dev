@@ -6,7 +6,7 @@ body {
   --black: #242121;
   --bigBodySize: 25px;
   --h1Size: 44px;
-  --smallBodySize: 19px;
+  --smallBodySize: 18px;
   --sidebarSize: 16px;
 }
 
@@ -14,7 +14,7 @@ body {
   :root {
     --bigBodySize: 27px;
     --h1Size: 40px;
-    --smallBodySize: 20px;
+    --smallBodySize: 19px;
     --sidebarSize: 16px;
   }
 }
