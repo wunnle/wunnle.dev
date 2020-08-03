@@ -1,14 +1,4 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
 /* article */
-
-:root {
-  --scrollY: 0px;
-}
 
 .work {
   width: 100%;
@@ -37,26 +27,6 @@ html {
   position: relative;
 }
 
-.titleShadow {
-  will-change: transform;
-  font-size: 160px;
-  color: rgba(148, 151, 158, 0.028);
-  position: fixed;
-  font-weight: 700;
-  z-index: -1;
-  left: 200px;
-  top: 0;
-  left: 0;
-  padding-left: 200px;
-  transform: translateY(calc(20% - (var(--scrollY) / 3)));
-  transform-origin: left center;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
 .container {
   display: flex;
   margin: auto;
@@ -80,7 +50,7 @@ html {
   margin-top: 0px;
 }
 
-img {
+.work img {
   margin: 0;
   vertical-align: middle;
 }

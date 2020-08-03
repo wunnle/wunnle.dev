@@ -1,0 +1,13 @@
+.home {
+  max-width: 100%;
+  margin: 100px auto 0;
+  box-sizing: border-box;
+  width: 880px;
+}
+
+@media screen and (max-width: 850px) {
+  .home {
+    margin-top: 20px;
+  }
+}
+

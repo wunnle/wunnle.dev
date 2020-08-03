@@ -8,13 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "fast-glob": "^3.0.4",
     "file-loader": "^5.0.2",
     "glob": "^7.1.4",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "9.2.0",
+    "next": "^9.5.1",
     "next-images": "^1.1.2",
     "raw-loader": "^4.0.0",
     "react": "16.12.0",

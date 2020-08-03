@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 
 import WorksContext from '../../Works.Context'
 import Footer from '../Footer'
-import Header from '../Header'
 import Intro from '../Intro'
 import WorkCard from './WorkCard'
 import styles from './WorkList.module.css'

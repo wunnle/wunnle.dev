@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import styles from './Intro.module.css'
 
 const Intro = () => (
@@ -16,7 +14,7 @@ const Intro = () => (
     </div>
     <div className={styles.longOne}>
       <p>
-        I’m an Istanbul based front-end developer and designer, working with companies
+        I’m an Istanbul based Sr. front-end developer and designer, working with companies
         worldwide for over 10 years. I’m experienced in <strong>HTML5</strong>,{' '}
         <strong>JS</strong> and <strong>CSS3</strong> and modern libraries{' '}
         <strong>React</strong>, <strong>Gatsby </strong>
