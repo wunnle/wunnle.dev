@@ -30,11 +30,11 @@ const Intro = () => (
           >
             ReactJS Istanbul
           </a>
-          , a community for React developers in Istanbul
+          , a community for React developers in Istanbul.
         </p>
         <p>
-          Currently working as design lead &amp; front-end dev on SwayPay, a startup from
-          San Francisco.
+          Currently working for full-time as design lead &amp; front-end dev on SwayPay, a
+          startup from San Francisco.
         </p>
       </div>
     </div>
