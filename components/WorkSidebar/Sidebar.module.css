@@ -58,7 +58,7 @@
 }
 
 .item {
-  color: #37383c;
+  color: rgba(55, 56, 60, 0.88);
   font-size: var(--sidebarSize);
   list-style: none;
   padding-left: 0;

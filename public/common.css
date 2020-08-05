@@ -7,7 +7,7 @@ body {
   --bigBodySize: 25px;
   --h1Size: 44px;
   --smallBodySize: 18px;
-  --sidebarSize: 16px;
+  --sidebarSize: 15px;
   --linkColor: #0079ff;
 }
 
@@ -16,7 +16,7 @@ body {
     --bigBodySize: 27px;
     --h1Size: 40px;
     --smallBodySize: 19px;
-    --sidebarSize: 16px;
+    --sidebarSize: 15px;
   }
 }
 
@@ -25,6 +25,6 @@ body {
     --bigBodySize: 19px;
     --h1Size: 28px;
     --smallBodySize: 18px;
-    --sidebarSize: 14px;
+    --sidebarSize: 13px;
   }
 }

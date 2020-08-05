@@ -1,46 +1,38 @@
-import styles from './Sidebar.module.css';
-import Icon from '../Icon';
+import Icon from '../Icon'
+import styles from './Sidebar.module.css'
 
 const Sidebar = ({ year, client, services, tech, website }) => (
   <div className={styles.sidebar}>
-    {
-      client
-      &&
+    {client && (
       <Section>
         <p className={styles.title}>Client</p>
         <p className={styles.item}>{client}</p>
       </Section>
-    }
-    {
-      services
-      &&
+    )}
+    {services && (
       <Section>
         <p className={styles.title}>Services</p>
         <ul>
-          {
-            services.split(', ').map(s => <li className={styles.item} key={s}>{s}</li>)
-          }
+          {services.split(', ').map(s => (
+            <li className={styles.item} key={s}>
+              {s}
+            </li>
+          ))}
         </ul>
       </Section>
-    }
-    {
-      tech
-      &&
+    )}
+    {tech && (
       <Section className={styles.techs}>
-        {
-          tech.split(', ').map(t => <Icon key={t}>{t}</Icon>)
-        }
+        {tech.split(', ').map(t => (
+          <Icon key={t}>{t}</Icon>
+        ))}
       </Section>
-    }
-
+    )}
   </div>
 )
 
 const Section = ({ children, className }) => (
-  <div className={[styles.section, className].join(' ')}>
-    {children}
-  </div>
+  <div className={[styles.section, className].join(' ')}>{children}</div>
 )
-
 
 export default Sidebar

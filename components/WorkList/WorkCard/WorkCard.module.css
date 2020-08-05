@@ -18,9 +18,15 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .card {
-    height: 340px;
+    height: 720px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    height: 540px;
   }
 }
 
@@ -49,13 +55,11 @@
 
 @media screen and (max-width: 880px) {
   .info {
-    padding-top: 40px;
-    padding-right: 0;
-    padding-bottom: 40px;
-    padding-left: 40px;
+    padding: 40px 0 40px 40px;
     width: 350px;
     max-width: 100%;
     margin-left: 0;
+    height: 600px;
   }
 }
 
@@ -80,7 +84,7 @@
 
 @media screen and (max-width: 600px) {
   .services {
-    margin-top: 30px;
+    margin-top: 15px;
   }
 }
 
@@ -95,6 +99,15 @@
 .tech {
   margin-top: auto;
   display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .tech {
+    margin-top: 20px;
+    margin-left: -5px;
+    transform: scale(0.8);
+    transform-origin: left center;
+  }
 }
 
 .techIcon {
@@ -118,11 +131,23 @@
   flex: 1;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 800px) {
   .images {
     position: absolute;
-    height: 100%;
-    left: 320px;
+    height: 700px;
+    top: 272px;
+    width: 143%;
+    left: -26px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .images {
+    position: absolute;
+    height: 420px;
+    top: 220px;
+    width: 143%;
+    left: 0;
   }
 }
 
