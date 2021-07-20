@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import styles from './NextWork.module.css'

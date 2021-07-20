@@ -7,7 +7,7 @@ import styles from './WorkCard.module.css'
 
 const bgColors = ['#4A2BAF', '#0F61C0', '#9E2B79', '#4146B5']
 
-const WorkCard = props => {
+const WorkCard = (props) => {
   const {
     index,
     slug,
@@ -28,7 +28,7 @@ const WorkCard = props => {
             ))}
           </div>
           <div className={styles.tech}>
-            {tech.split(', ').map(t => (
+            {tech.split(', ').map((t) => (
               <div key={t} className={styles.techIcon}>
                 <Icon white>{t}</Icon>
               </div>

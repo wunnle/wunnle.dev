@@ -1,7 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from 'react'
 
 function useScroll() {
-
   let scrollY = 0
   let ticking = false
 
@@ -12,7 +11,7 @@ function useScroll() {
 
   function requestTick() {
     if (!ticking) {
-      requestAnimationFrame(update);
+      requestAnimationFrame(update)
     }
     ticking = true
   }
@@ -22,20 +21,19 @@ function useScroll() {
     var currentScrollY = scrollY
 
     requestAnimationFrame(update)
-    document.documentElement.style.setProperty('--scrollY', `${currentScrollY}px`);
+    document.documentElement.style.setProperty('--scrollY', `${currentScrollY}px`)
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll, false);
+    window.addEventListener('scroll', onScroll, false)
     return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  });
-
+      window.removeEventListener('scroll', onScroll)
+    }
+  })
 
   return {
     scrollY
-  };
+  }
 }
 
 export default useScroll
