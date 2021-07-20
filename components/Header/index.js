@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Script from 'next/script'
 
 import styles from './Header.module.css'
 import logo from './logo.svg'
@@ -11,6 +12,7 @@ const Header = () => (
           <img className={styles.logo} src={logo} width="150" alt="" />
         </a>
       </Link>
+      <Script src="https://www.poeticmetric.com/poeticmetric.js"></Script>
       <nav className={styles.nav}>
         <a href="https://wunnle.com/">Blog</a>
         <a
