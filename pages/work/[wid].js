@@ -63,14 +63,10 @@ const Post = () => {
 
   const works = useContext(WorksContext)
 
-  const currentIndex = works.findIndex(w => w.slug === wid)
-
   const {
     document: { data, content },
     images
-  } = works.find(w => w.slug === wid)
-
-  const nextWork = works[currentIndex + 1] ? works[currentIndex + 1] : works[0]
+  } = works.find((w) => w.slug === wid)
 
   return (
     <>

@@ -1,7 +1,7 @@
 import Icon from '../Icon'
 import styles from './Sidebar.module.css'
 
-const Sidebar = ({ year, client, services, tech, website }) => (
+const Sidebar = ({ client, services, tech }) => (
   <div className={styles.sidebar}>
     {client && (
       <Section>
@@ -13,7 +13,7 @@ const Sidebar = ({ year, client, services, tech, website }) => (
       <Section>
         <p className={styles.title}>Services</p>
         <ul>
-          {services.split(', ').map(s => (
+          {services.split(', ').map((s) => (
             <li className={styles.item} key={s}>
               {s}
             </li>
@@ -23,7 +23,7 @@ const Sidebar = ({ year, client, services, tech, website }) => (
     )}
     {tech && (
       <Section className={styles.techs}>
-        {tech.split(', ').map(t => (
+        {tech.split(', ').map((t) => (
           <Icon key={t}>{t}</Icon>
         ))}
       </Section>
