@@ -28,7 +28,7 @@ const Intro = () => (
             target="_blank"
             rel="noreferrer"
           >
-            ReactJS Istanbul
+            React Istanbul
           </a>
           , a community for React developers in Istanbul.
         </p>
