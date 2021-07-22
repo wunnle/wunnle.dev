@@ -33,8 +33,8 @@ const Intro = () => (
           , a community for React developers in Istanbul.
         </p>
         <p>
-          Currently working for full-time as design lead &amp; front-end dev on SwayPay, a
-          startup from San Francisco.
+          I am currently working full time as a design lead &amp; front-end developer at
+          SwayPay, a startup from San Francisco.
         </p>
       </div>
     </div>
