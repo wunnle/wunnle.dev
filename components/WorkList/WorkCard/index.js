@@ -17,8 +17,13 @@ const WorkCard = (props) => {
   } = props
 
   return (
-    <Link href="/work/[wid]" as={`/work/${slug}`}>
-      <a className={styles.card} style={{ background: bgColors[index % 4] }}>
+    <Link
+      href="/work/[wid]"
+      as={`/work/${slug}`}
+      className={styles.card}
+      style={{ background: bgColors[index % 4] }}
+    >
+      <>
         <div className={styles.info}>
           <p className={styles.date}>{new Date(date).getFullYear()}</p>
           <h1 className={styles.title}>{title}</h1>
@@ -36,9 +41,10 @@ const WorkCard = (props) => {
           </div>
         </div>
         <div className={styles.images}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={featuredImg} alt={title} />
         </div>
-      </a>
+      </>
     </Link>
   )
 }

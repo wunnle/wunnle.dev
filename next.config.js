@@ -8,11 +8,11 @@ module.exports = withImages({
       use: 'raw-loader'
     })
 
-    if (!options.isServer) {
-      config.node = {
-        fs: 'empty'
-      }
-    }
+    // if (!options.isServer) {
+    //   config.node = {
+    //     fs: 'empty'
+    //   }
+    // }
 
     return config
   }
