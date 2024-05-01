@@ -131,18 +131,19 @@ const Img = ({ alt, src }) => {
     )
   }
 
+  // return null
+
   return (
-    <Link href={src}>
-      <a target="_blank" rel="noopener noreferrer">
-        <div
-          className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(
-            ' '
-          )}
-          ref={ref}
-        >
-          <img srcSet={`${src} 2x`} alt={alt} />
-        </div>
-      </a>
+    <Link
+      href={src}
+      target="_blank"
+      rel="noopener noreferrer"
+      passHref
+      className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')}
+      ref={ref}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img srcSet={`${src} 2x`} alt={alt} />
     </Link>
   )
 }

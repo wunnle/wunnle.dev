@@ -151,6 +151,7 @@
   transition: background-color 0.25s ease-in, transform 0.25s cubic-bezier(0.37, 1.05, 1, 1), box-shadow 0.1s ease;
   border-radius: 3px;
   transform: translateY(80px);
+  display: inline-block;
 }
 
 @media screen and (max-width: 1100px) {

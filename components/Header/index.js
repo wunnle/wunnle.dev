@@ -1,16 +1,20 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 
 import styles from './Header.module.css'
-import logo from './logo.svg'
 
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerInner}>
-      <Link href="/">
-        <a>
-          <img className={styles.logo} src={logo} width="150" alt="" />
-        </a>
+      <Link href="/" passHref>
+        <Image
+          src="/images/logo.svg"
+          width={136}
+          height={42}
+          alt="wunnle logo"
+          className={styles.logo}
+        />
       </Link>
       <Script src="https://www.poeticmetric.com/poeticmetric.js"></Script>
       <nav className={styles.nav}>
