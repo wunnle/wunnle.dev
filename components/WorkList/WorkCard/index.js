@@ -5,14 +5,11 @@ import React from 'react'
 import Icon from '../../Icon'
 import styles from './WorkCard.module.css'
 
-const bgColors = ['#4A2BAF', '#0F61C0', '#9E2B79', '#4146B5']
-
 const WorkCard = (props) => {
   const {
-    index,
     slug,
     document: {
-      data: { title, date, services, tech, featuredImg }
+      data: { title, date, services, tech, featuredImg, backgroundColor }
     }
   } = props
 
@@ -21,7 +18,7 @@ const WorkCard = (props) => {
       href="/work/[wid]"
       as={`/work/${slug}`}
       className={styles.card}
-      style={{ background: bgColors[index % 4] }}
+      style={{ backgroundColor }}
     >
       <>
         <div className={styles.info}>
