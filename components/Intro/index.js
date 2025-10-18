@@ -32,10 +32,7 @@ const Intro = () => (
           </a>
           , a community for React developers in Istanbul.
         </p>
-        <p>
-          I am currently working full time as a design lead &amp; front-end developer at
-          SwayPay, a startup from San Francisco.
-        </p>
+        <p>I am currently working as director of engineering at Directful.</p>
       </div>
     </div>
     <div className={styles.br}></div>
