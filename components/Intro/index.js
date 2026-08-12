@@ -12,11 +12,11 @@ const Intro = () => (
       </div>
       <div className={styles.longOne}>
         <p>
-          I’m an Istanbul based software engineer, building for the web for over 15
-          years. I’ve been leading engineering teams for a good part of that. I work
-          across the stack, mostly with <strong>TypeScript</strong>,{' '}
-          <strong>React</strong> and <strong>Next.js</strong> on the front end and{' '}
-          <strong>Node.js</strong> on the back.
+          I’m an Istanbul based software engineer, building for the web for over 15 years.
+          I’ve been leading engineering teams for a good part of that. I work across the
+          stack, mostly with <strong>TypeScript</strong>, <strong>React</strong> and{' '}
+          <strong>Next.js</strong> on the front end and <strong>Node.js</strong> on the
+          back.
         </p>
         <p>
           Lately I’ve been spending most of my time on <strong>AI</strong> and{' '}

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import circle from './circle.svg'
 import styles from './Line.module.css'
 
 const Line = () => (
