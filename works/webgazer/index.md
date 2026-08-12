@@ -4,6 +4,7 @@ date: 2024-01-01
 client: WebGazer
 services: 'UI/UX design'
 tech: 'Figma'
+website: 'https://www.webgazer.io'
 featuredImg: '/webgazer/preview.png'
 backgroundColor: "#1D6FB8"
 ---

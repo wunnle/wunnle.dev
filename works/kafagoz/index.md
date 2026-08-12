@@ -3,6 +3,7 @@ title: 'Kafagoz'
 date: 2026-01-01
 services: 'Front-end development, UI/UX design'
 tech: 'React, CSS3'
+website: 'https://kafagoz.com'
 featuredImg: '/kafagoz/preview.png'
 backgroundColor: "#2F3350"
 ---
