@@ -1,6 +1,6 @@
 ---
 title: 'WebGazer'
-date: 2024-01-01
+date: 2023-01-01
 client: WebGazer
 services: 'UI/UX design'
 tech: 'Figma'
