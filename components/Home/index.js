@@ -6,7 +6,7 @@ const Home = () => (
   <div className={styles.home}>
     <SEO
       title="Wunnle | Portfolio"
-      description="Portfolio of Sinan, a web developer and UI/UX designer"
+      description="Portfolio of Sinan, an Istanbul based software engineer who leads teams that ship"
     />
     <WorkList />
   </div>
