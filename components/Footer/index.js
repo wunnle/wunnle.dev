@@ -16,18 +16,6 @@ const Footer = ({ noBorder }) => (
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://twitter.com/wunnle"
-            >
-              <Image
-                src="/images/twitter.svg"
-                width={24}
-                height={24}
-                alt="wunnle on twitter"
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
               href="https://dribbble.com/wunnle"
             >
               <Image

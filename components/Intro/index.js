@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import styles from './Intro.module.css'
 
 const Intro = () => (
@@ -9,6 +11,25 @@ const Intro = () => (
         <a target="_blank" rel="noopener noreferrer" href="mailto:me@wunnle.com">
           <button className={styles.helloButton}>Say hello</button>
         </a>
+        <ul className={styles.socials}>
+          {[
+            ['https://github.com/wunnle', 'github', 'GitHub'],
+            ['https://bsky.app/profile/tadiyok.com', 'bluesky', 'Bluesky'],
+            ['https://www.instagram.com/n.ggle/', 'instagram', 'Instagram'],
+            ['https://dribbble.com/wunnle', 'dribble', 'Dribbble']
+          ].map(([href, icon, name]) => (
+            <li key={icon}>
+              <a target="_blank" rel="noopener noreferrer" href={href}>
+                <Image
+                  src={`/images/${icon}.svg`}
+                  width={24}
+                  height={24}
+                  alt={`wunnle on ${name}`}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={styles.longOne}>
         <p>
@@ -34,7 +55,7 @@ const Intro = () => (
           , a community for React developers in Istanbul.
         </p>
         <p>
-          I’m currently working as a senior software engineer at{' '}
+          I’m currently leading engineering at{' '}
           <a href="https://colonist.io" target="_blank" rel="noreferrer">
             Colonist
           </a>

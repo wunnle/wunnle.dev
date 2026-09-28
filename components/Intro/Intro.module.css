@@ -129,3 +129,21 @@
   background: var(--linkColor);
   color: white;
 }
+
+.socials {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+
+.socials a {
+  display: flex;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in;
+}
+
+.socials a:hover {
+  opacity: 1;
+}
