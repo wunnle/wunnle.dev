@@ -13,7 +13,7 @@ const WorkList = () => {
   return (
     <>
       <div className={styles.workContainer}>
-        <h1 className={styles.title}>Recent works</h1>
+        <h1 className={styles.title}>Selected work</h1>
         <div className={styles.workList}>
           {works && works.map((p, i) => <WorkCard key={p.slug} index={i} {...p} />)}
         </div>

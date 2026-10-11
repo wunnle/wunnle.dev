@@ -9,7 +9,7 @@ const WorkCard = (props) => {
   const {
     slug,
     document: {
-      data: { title, date, services, tech, featuredImg, backgroundColor }
+      data: { title, date, tagline, role, tech, featuredImg, backgroundColor }
     }
   } = props
 
@@ -24,18 +24,17 @@ const WorkCard = (props) => {
         <div className={styles.info}>
           <p className={styles.date}>{new Date(date).getFullYear()}</p>
           <h1 className={styles.title}>{title}</h1>
-          <div className={styles.services}>
-            {services.split(', ').map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
-          </div>
-          <div className={styles.tech}>
-            {tech.split(', ').map((t) => (
-              <div key={t} className={styles.techIcon}>
-                <Icon white>{t}</Icon>
-              </div>
-            ))}
-          </div>
+          <p className={styles.tagline}>{tagline}</p>
+          <p className={styles.role}>{role}</p>
+          {tech && (
+            <div className={styles.tech}>
+              {tech.split(', ').map((t) => (
+                <div key={t} className={styles.techIcon} data-label={t}>
+                  <Icon white>{t}</Icon>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className={styles.images}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -50,13 +49,15 @@ WorkCard.propTypes = {
   index: PropTypes.number,
   slug: PropTypes.string,
   document: PropTypes.shape({
-    data: {
+    data: PropTypes.shape({
       title: PropTypes.string,
-      year: PropTypes.string,
-      services: PropTypes.string,
+      date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+      tagline: PropTypes.string,
+      role: PropTypes.string,
       tech: PropTypes.string,
-      images: PropTypes.string
-    }
+      featuredImg: PropTypes.string,
+      backgroundColor: PropTypes.string
+    })
   })
 }
 

@@ -2,8 +2,9 @@
 title: 'Janbala'
 date: 2016-01-01
 client: Travana
-services: 'Front-end development, UI/UX design'
-tech: 'HTML5, CSS3, Photoshop'
+tagline: 'An online travel agency for flights and hotels'
+role: 'Designer & UX developer'
+tech: 'HTML5, CSS3, Figma'
 featuredImg: '/janbala/preview.png'
 backgroundColor: "#9E2B79"
 ---

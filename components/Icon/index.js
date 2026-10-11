@@ -7,7 +7,7 @@ const Icon = ({ children: icon, className, white }) => {
   const src = icons?.[name]
 
   if (src) {
-    return <img className={className} title={icon} src={src} alt={icon} />
+    return <img className={className} src={src} alt={icon} />
   }
 
   return null

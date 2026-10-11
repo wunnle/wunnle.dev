@@ -42,14 +42,6 @@
   }
 }
 
-.techs img:first-of-type {
-  margin-left: -4px;
-}
-
-.techs img {
-  margin-right: 3px;
-}
-
 .title {
   color: #9699a3;
   font-size: var(--sidebarSize);

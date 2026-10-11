@@ -44,7 +44,7 @@
   width: 400px;
   color: white;
   padding-top: 60px;
-  padding-right: 0;
+  padding-right: 48px;
   padding-bottom: 60px;
   height: 100%;
   box-sizing: border-box;
@@ -55,10 +55,15 @@
 
 @media screen and (max-width: 880px) {
   .info {
-    padding: 40px 0 40px 40px;
+    padding: 40px 24px 40px 40px;
     width: 350px;
     max-width: 100%;
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .info {
     height: 600px;
   }
 }
@@ -77,23 +82,20 @@
   opacity: 0.8;
 }
 
-.services {
-  list-style: none;
-  margin-top: 40px;
+.tagline {
+  margin: 40px 0 0;
+  font-size: 18px;
+}
+
+.role {
+  margin: 12px 0 0;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 600px) {
-  .services {
+  .tagline {
     margin-top: 15px;
   }
-}
-
-.services li {
-  opacity: 0.8;
-}
-
-.services li + li {
-  margin-top: 5px;
 }
 
 .tech {
@@ -116,6 +118,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.techIcon::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in, transform 0.15s ease-in;
+}
+
+.techIcon:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .tech img {
