@@ -1,6 +1,11 @@
+.hero {
+  overflow-x: clip;
+}
+
 .intro {
   margin: 125px auto 94px;
   display: flex;
+  position: relative;
   box-sizing: border-box;
   width: 880px;
   max-width: 100%;
@@ -12,8 +17,140 @@
   }
 }
 
+/* the divider, drawn as a 1px block so a glow can sit on it under the cursor */
 .br {
-  border-bottom: 1px solid rgba(62, 62, 225, 0.12);
+  position: relative;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(62, 62, 225, 0.12);
+}
+
+.br::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 121, 255, 0.55), transparent);
+  /* --x and --near are set from the cursor in Intro/index.js */
+  transform: translateX(calc(var(--x, -200px) - 90px));
+  opacity: var(--near, 0);
+  transition: opacity 0.3s ease;
+}
+
+/* background decoration */
+.shortOne,
+.longOne {
+  position: relative;
+  z-index: 1;
+}
+
+.decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .decor {
+    display: none;
+  }
+}
+
+/* one dot lattice across the hero, strongest on the sides and fading to a faint trace behind the content */
+.sideDots,
+.reveal {
+  position: absolute;
+  /* the full window width: .intro is centred, so 50% - 50vw reaches the window's edges */
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  /* reaches past the top of the page, like the guides */
+  top: -400px;
+  bottom: -94px;
+  background-image: radial-gradient(circle, #a7b4cf 1px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+.sideDots {
+  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.45) 30%, rgb(0 0 0 / 0.45) 70%, black),
+    /* eases in near the top of the page, strongest just above the content (400px in), fading out towards the divider */
+    linear-gradient(transparent 250px, black 420px, transparent);
+  mask-composite: intersect;
+  opacity: 0.6;
+}
+
+/* the same lattice, shown faintly in a soft circle around the cursor.
+   --x, --y and --on are set from the cursor in Intro/index.js */
+.reveal {
+  mask-image: radial-gradient(circle 200px at var(--x, -999px) var(--y, -999px), black, transparent);
+  opacity: calc(var(--on, 0) * 0.45);
+  transition: opacity 0.4s ease;
+}
+
+/* the content column's edges, drawn as faint guides from the top of the page down to the divider */
+.guide {
+  position: absolute;
+  /* reaches past the top of the page, so the line runs from the very top */
+  top: -400px;
+  bottom: -94px;
+  width: 1px;
+  /* strongest near the top of the page, fading gradually to nothing as it nears the content (400px in), back near the divider */
+  background: linear-gradient(
+    rgba(62, 62, 225, 0.14) 120px,
+    transparent 380px,
+    transparent calc(100% - 180px),
+    rgba(62, 62, 225, 0.09) calc(100% - 20px)
+  );
+}
+
+.guideLeft {
+  left: 0;
+}
+
+.guideRight {
+  right: 0;
+}
+
+.cross {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+}
+
+.cross::before,
+.cross::after {
+  content: '';
+  position: absolute;
+  background: rgba(62, 62, 225, 0.16);
+}
+
+.cross::before {
+  left: 4px;
+  top: 0;
+  width: 1px;
+  height: 9px;
+}
+
+.cross::after {
+  top: 4px;
+  left: 0;
+  width: 9px;
+  height: 1px;
+}
+
+/* where the guides meet the divider */
+.crossLeft,
+.crossRight {
+  bottom: -99px;
+}
+
+.crossLeft {
+  left: -4px;
+}
+
+.crossRight {
+  right: -4px;
 }
 
 
@@ -94,6 +231,7 @@
   font-size: calc(var(--bigBodySize) * 1.1);
   line-height: 108.7%;
   margin-top: 5px;
+  margin-bottom: 36px;
   color: #6d7777;
   line-height: 1.3em;
 }
@@ -135,7 +273,7 @@
   gap: 16px;
   list-style: none;
   padding: 0;
-  margin: 36px 0 0;
+  margin: 48px 0 0;
 }
 
 .socials a {
