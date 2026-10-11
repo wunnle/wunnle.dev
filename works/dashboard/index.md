@@ -3,7 +3,7 @@ title: 'SwayPay Dashboard'
 date: 2019-12-01
 client: SwayPay
 tagline: 'A CRM for hotels to run guest campaigns and reply to reviews'
-role: 'Led the engineering team'
+role: 'Engineering lead'
 tech: 'React, Redux, Figma, AWS'
 website: 'https://dashboard.swaypay.io'
 featuredImg: '/dashboard/preview.png'

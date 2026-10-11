@@ -1,9 +1,9 @@
 ---
 title: 'Savibook'
 date: 2021-01-01
-client: SwayPay
+client: Directful
 tagline: 'Branded offer and feedback pages for hotel guests'
-role: 'Led the engineering team'
+role: 'Engineering lead'
 tech: 'React, Figma, AWS'
 featuredImg: '/savibook/preview.png'
 backgroundColor: "#829BBA"

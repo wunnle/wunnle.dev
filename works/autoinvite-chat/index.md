@@ -3,7 +3,7 @@ title: 'AutoInvite chat'
 date: 2020-01-01
 client: SwayPay
 tagline: 'Real-time messaging between hotels and their guests'
-role: 'Led the engineering team'
+role: 'Engineering lead'
 tech: 'React, Redux, Figma, AWS'
 website: 'https://dashboard.swaypay.io/messaging'
 featuredImg: '/autoinvite-chat/preview.png'

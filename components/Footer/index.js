@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import socials from '../socials'
 import styles from './Footer.module.css'
 
 const Footer = ({ noBorder }) => (
@@ -13,26 +14,16 @@ const Footer = ({ noBorder }) => (
       <nav className={styles.nav}>
         <ul>
           <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://dribbble.com/wunnle"
-            >
-              <Image
-                src="/images/dribble.svg"
-                width={24}
-                height={24}
-                alt="wunnle on dribbble"
-              />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/wunnle">
-              <Image
-                src="/images/github.svg"
-                width={24}
-                height={24}
-                alt="wunnle on github"
-              />
-            </a>
+            {socials.map(({ href, icon, name }) => (
+              <a key={icon} target="_blank" rel="noopener noreferrer" href={href}>
+                <Image
+                  src={`/images/${icon}.svg`}
+                  width={24}
+                  height={24}
+                  alt={`wunnle on ${name}`}
+                />
+              </a>
+            ))}
           </li>
         </ul>
       </nav>

@@ -3,7 +3,7 @@
 .sidebar {
   min-width: 220px;
   margin-left: auto;
-  margin-top: 38px;
+  margin-top: 25px;
 }
 
 .sidebar p {
@@ -75,4 +75,68 @@
 .sidebar ul {
   padding-left: 0;
   margin: 0;
+}
+
+.techs {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  /* the first slot's padding would push the row in; pull it back so the first icon lines up with the text */
+  margin-left: -3px;
+}
+
+.techIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.techIcon img {
+  height: 22px;
+  /* the white icons, tinted to the sidebar's text grey */
+  filter: brightness(0);
+  opacity: 0.55;
+  transition: opacity 0.15s ease-in;
+}
+
+.techIcon:hover img {
+  opacity: 0.85;
+}
+
+.techIcon::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in, transform 0.15s ease-in;
+}
+
+.techIcon:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* side by side with the text on desktop: right-align so it sits flush with the page's right edge */
+@media screen and (min-width: 1101px) {
+  .sidebar {
+    text-align: right;
+  }
+
+  .techs {
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: -3px;
+  }
 }

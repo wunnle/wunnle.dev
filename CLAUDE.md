@@ -4,7 +4,7 @@ Sinan's portfolio. Next.js (pages router). Each work is a folder in `works/<slug
 
 ## Work frontmatter
 
-- `title`, `date` (works are listed newest first), `tagline` (what the project is, a few words, shown on the card), `role` (Sinan's role, e.g. "Led the engineering team" or "Personal project"; shown under the tagline on the card and in the work page sidebar), `tech` (optional, comma-separated stack shown as white icons on the card, server-side and hosting last, e.g. "Next.js, Figma, Firebase, Vercel"; each name needs a `<name>White` entry in `components/Icon/icons.js`), `client` (optional), `website` (optional), `featuredImg` (the card preview), `backgroundColor` (the card colour).
+- `title`, `date` (works are listed newest first), `tagline` (what the project is, a few words, shown on the card), `role` (Sinan's role, e.g. "Engineering lead" or "Personal project"; shown under the tagline on the card, and unlabelled in the work page sidebar above the stack), `tech` (optional, comma-separated stack shown as white icons on the card and the same icons tinted grey in the work page sidebar, both with hover tooltips; server-side and hosting last, e.g. "Next.js, Figma, Firebase, Vercel"; each name needs a `<name>White` entry in `components/Icon/icons.js`), `client` (optional), `website` (optional), `featuredImg` (the card preview), `backgroundColor` (the card colour).
 - Card colours: reuse the existing ones rather than inventing new ones. They can cycle; avoid giving two neighbouring cards the same colour.
 - The site is framed around engineering leadership. Don't describe work as design or front-end only.
 
@@ -30,7 +30,7 @@ Check the result on the homepage at both desktop and phone widths before committ
 
 ## Work page images
 
-`images.md` lists the screenshots shown on the work page, one per line. Use single full-height phone screenshots (resized to 996px wide) rather than collages, plus at most one desktop screenshot (1600px wide) when the product has a desktop layout.
+`images.md` lists the screenshots shown on the work page, one per line. The work page is 880px wide, the same as the home page. Portrait images (phone screenshots) automatically sit two to a row; landscape ones take the full width. Use single full-height phone screenshots (resized to 996px wide) rather than collages, plus at most one desktop screenshot (at least 1760px wide, so it stays sharp at 2x) when the product has a desktop layout.
 
 ## Checks
 

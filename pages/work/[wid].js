@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ReactMarkdown from 'react-markdown'
 import removeMd from 'remove-markdown'
@@ -119,6 +119,17 @@ const Img = ({ alt, src }) => {
     threshold: 0.1,
     triggerOnce: true
   })
+  // phone screenshots sit two to a row; anything wider takes the full width
+  const [tall, setTall] = useState(false)
+  const img = useRef()
+  const measure = () => {
+    const { naturalWidth, naturalHeight } = img.current
+    setTall(naturalHeight > naturalWidth)
+  }
+  // a cached image can finish loading before React attaches onLoad
+  useEffect(() => {
+    if (img.current?.complete) measure()
+  }, [src])
 
   if (src.match(/.mp4$/)) {
     return (
@@ -139,11 +150,15 @@ const Img = ({ alt, src }) => {
       target="_blank"
       rel="noopener noreferrer"
       passHref
-      className={[styles.imgContainer, inView ? styles.imgContainerAnim : ''].join(' ')}
+      className={[
+        styles.imgContainer,
+        tall ? styles.imgContainerTall : '',
+        inView ? styles.imgContainerAnim : ''
+      ].join(' ')}
       ref={ref}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img srcSet={`${src} 2x`} alt={alt} />
+      <img srcSet={`${src} 2x`} alt={alt} ref={img} onLoad={measure} />
     </Link>
   )
 }

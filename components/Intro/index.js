@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import socials from '../socials'
 import styles from './Intro.module.css'
 
 const Intro = () => (
@@ -12,12 +13,7 @@ const Intro = () => (
           <button className={styles.helloButton}>Say hello</button>
         </a>
         <ul className={styles.socials}>
-          {[
-            ['https://github.com/wunnle', 'github', 'GitHub'],
-            ['https://bsky.app/profile/tadiyok.com', 'bluesky', 'Bluesky'],
-            ['https://www.instagram.com/n.ggle/', 'instagram', 'Instagram'],
-            ['https://dribbble.com/wunnle', 'dribble', 'Dribbble']
-          ].map(([href, icon, name]) => (
+          {socials.map(({ href, icon, name }) => (
             <li key={icon}>
               <a target="_blank" rel="noopener noreferrer" href={href}>
                 <Image

@@ -1,7 +1,7 @@
 ---
 title: 'SpielList'
 date: 2026-09-01
-tagline: 'A mobile-first planner for every new game at SPIEL Essen'
+tagline: 'A planner for every new game at SPIEL Essen'
 role: 'Personal project'
 tech: 'Next.js, Figma, Firebase, Vercel'
 website: 'https://spiellist.com'

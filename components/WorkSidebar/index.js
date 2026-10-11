@@ -1,6 +1,7 @@
+import Icon from '../Icon'
 import styles from './Sidebar.module.css'
 
-const Sidebar = ({ client, role }) => (
+const Sidebar = ({ client, role, tech }) => (
   <div className={styles.sidebar}>
     {client && (
       <Section>
@@ -8,10 +9,18 @@ const Sidebar = ({ client, role }) => (
         <p className={styles.item}>{client}</p>
       </Section>
     )}
-    {role && (
+    {(role || tech) && (
       <Section>
-        <p className={styles.title}>Role</p>
-        <p className={styles.item}>{role}</p>
+        {role && <p className={styles.item}>{role}</p>}
+        {tech && (
+          <div className={styles.techs}>
+            {tech.split(', ').map((t) => (
+              <span key={t} className={styles.techIcon} data-label={t}>
+                <Icon white>{t}</Icon>
+              </span>
+            ))}
+          </div>
+        )}
       </Section>
     )}
   </div>
