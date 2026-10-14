@@ -14,14 +14,15 @@
   }
 }
 
+/* the same style as the home page greeting ("Hi, I'm Sinan."), with slightly looser letter spacing */
 .workTitle {
-  font-size: calc(var(--h1Size) * 1.3);
+  font-size: calc(var(--h1Size) * 1.2);
   line-height: 1.05em;
-  color: #282c35;
+  color: var(--black);
   letter-spacing: -0.01em;
   margin-bottom: 0;
   margin-top: -12px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .work hgroup {
@@ -326,9 +327,9 @@
     margin-top: 10px;
   }
 
-  /* same size as the home page bio on phones */
+  /* on phones, the same size as the home page bio */
   .inner p {
-    font-size: calc(var(--smallBodySize) * 1.05);
+    font-size: calc(var(--smallBodySize) * 0.95);
     line-height: 1.6em;
   }
 
