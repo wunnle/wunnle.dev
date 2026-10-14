@@ -18,15 +18,12 @@
   }
 }
 
+/* narrow screens stack the text and the preview: the text takes the height it needs and the preview
+   sits below it, so a longer tagline can never run into it */
 @media screen and (max-width: 800px) {
   .card {
-    height: 720px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .card {
-    height: 540px;
+    height: auto;
+    flex-direction: column;
   }
 }
 
@@ -64,7 +61,9 @@
 
 @media screen and (max-width: 800px) {
   .info {
-    height: 600px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 28px;
   }
 }
 
@@ -156,23 +155,28 @@
   flex: 1;
 }
 
+/* the preview keeps its previous size and crop, just placed below the text instead of at a fixed offset */
 @media screen and (max-width: 800px) {
   .images {
-    position: absolute;
-    height: 700px;
-    top: 272px;
+    flex: none;
+    height: 448px;
     width: 143%;
     left: -26px;
+  }
+
+  .images img {
+    height: 700px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .images {
-    position: absolute;
-    height: 420px;
-    top: 220px;
-    width: 143%;
+    height: 320px;
     left: 0;
+  }
+
+  .images img {
+    height: 420px;
   }
 }
 
@@ -185,6 +189,11 @@
 @media screen and (max-width: 880px) {
   .images img {
     max-width: none;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 880px) {
+  .images img {
     height: 100%;
   }
 }

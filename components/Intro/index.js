@@ -1,61 +1,19 @@
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
 
 import socials from '../socials'
+import DotWave from './DotWave'
 import styles from './Intro.module.css'
 
-// Lets the dot grid and the divider respond to the cursor: more of the grid shows faintly around it,
-// and the divider glows under it. Writes CSS variables, so React never re-renders.
-const useCursorResponse = (reveal, divider) => {
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
-
-    let frame
-    const onMove = ({ clientX, clientY }) => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => {
-        if (reveal.current) {
-          const r = reveal.current.getBoundingClientRect()
-          const inside =
-            clientX > r.left && clientX < r.right && clientY > r.top && clientY < r.bottom
-          reveal.current.style.setProperty('--x', `${clientX - r.left}px`)
-          reveal.current.style.setProperty('--y', `${clientY - r.top}px`)
-          reveal.current.style.setProperty('--on', inside ? 1 : 0)
-        }
-        if (divider.current) {
-          const r = divider.current.getBoundingClientRect()
-          divider.current.style.setProperty('--x', `${clientX - r.left}px`)
-          divider.current.style.setProperty(
-            '--near',
-            Math.max(0, 1 - Math.abs(clientY - r.top) / 250)
-          )
-        }
-      })
-    }
-
-    window.addEventListener('mousemove', onMove, { passive: true })
-    return () => {
-      window.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(frame)
-    }
-  }, [reveal, divider])
-}
-
 const Intro = () => {
-  const reveal = useRef()
-  const divider = useRef()
-  useCursorResponse(reveal, divider)
-
   return (
     // clips the full-width decoration sideways only, so it never adds a horizontal scrollbar
     <div className={styles.hero}>
       <div className={styles.intro}>
-        {/* background decoration: the layout grid, drawn faintly, and a dot grid on the sides */}
+        {/* background decoration: a 3D dot wave and registration marks */}
         <div className={styles.decor} aria-hidden="true">
-          <div className={styles.reveal} ref={reveal} />
-          <div className={styles.sideDots} />
-          <span className={[styles.guide, styles.guideLeft].join(' ')} />
-          <span className={[styles.guide, styles.guideRight].join(' ')} />
+          <div className={styles.dots}>
+            <DotWave className={styles.dotsCanvas} />
+          </div>
           <span className={[styles.cross, styles.crossLeft].join(' ')} />
           <span className={[styles.cross, styles.crossRight].join(' ')} />
         </div>
@@ -112,7 +70,6 @@ const Intro = () => {
           </p>
         </div>
       </div>
-      <div className={styles.br} ref={divider}></div>
     </div>
   )
 }

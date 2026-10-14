@@ -1,5 +1,29 @@
-.container,
-.containerNoBorder {
+.footer {
+  position: relative;
+}
+
+/* the dot sea behind the footer: full window width, fading in from above, strongest at the sides */
+.sea {
+  position: absolute;
+  /* the footer is centred, so 50% - 50vw reaches the window's edges */
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  bottom: 0;
+  height: 280px;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.8) 30%, rgb(0 0 0 / 0.8) 70%, black),
+    linear-gradient(transparent 15%, black 75%);
+  mask-composite: intersect;
+}
+
+.seaCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
   text-align: center;
   display: flex;
   align-items: center;
@@ -8,14 +32,9 @@
   box-sizing: border-box;
   width: 880px;
   max-width: 100%;
-  border-top: 1px solid rgba(62, 62, 225, 0.12);
   padding: 0 20px;
   margin-top: 80px;
   margin: auto;
-}
-
-.containerNoBorder {
-  border-top: 0;
 }
 
 .logoLink img {

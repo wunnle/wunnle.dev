@@ -8,6 +8,7 @@ import removeMd from 'remove-markdown'
 
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import DotWave from '../../components/Intro/DotWave'
 import Layout from '../../components/Layout'
 import Line from '../../components/Line'
 import SEO from '../../components/SEO'
@@ -21,6 +22,10 @@ const WorkInfo = ({ data, data: { title, website }, content }) => {
       <div className={styles.workWrapper}>
         <div className={styles.workInfo}>
           <div className={styles.topContainer}>
+            {/* the same dot sea as the home page hero, behind the title and description */}
+            <div className={styles.dots} aria-hidden="true">
+              <DotWave className={styles.dotsCanvas} />
+            </div>
             <Line />
             <div className={styles.topInfo}>
               <hgroup>
@@ -93,7 +98,7 @@ const Post = () => {
       {/* <NextWork nextSlug={nextWork.slug}>
         <WorkInfo data={nextWork.document.data} content={nextWork.document.content} />
       </NextWork> */}
-      <Footer noBorder />
+      <Footer />
     </>
   )
 }

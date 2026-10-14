@@ -1,5 +1,8 @@
 .hero {
   overflow-x: clip;
+  /* stands in for the 1px divider that used to sit here: keeps the intro's bottom margin from merging
+     with the margin above the work list */
+  padding-bottom: 1px;
 }
 
 .intro {
@@ -17,28 +20,6 @@
   }
 }
 
-/* the divider, drawn as a 1px block so a glow can sit on it under the cursor */
-.br {
-  position: relative;
-  height: 1px;
-  overflow: hidden;
-  background: rgba(62, 62, 225, 0.12);
-}
-
-.br::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 180px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 121, 255, 0.55), transparent);
-  /* --x and --near are set from the cursor in Intro/index.js */
-  transform: translateX(calc(var(--x, -200px) - 90px));
-  opacity: var(--near, 0);
-  transition: opacity 0.3s ease;
-}
-
 /* background decoration */
 .shortOne,
 .longOne {
@@ -50,66 +31,46 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* behind everything on the page, so the wave only shows through empty space where it runs past the hero */
+  z-index: -1;
 }
 
+/* the registration marks line up with the desktop layout only */
 @media screen and (max-width: 1100px) {
-  .decor {
+  .cross {
     display: none;
   }
 }
 
-/* one dot lattice across the hero, strongest on the sides and fading to a faint trace behind the content */
-.sideDots,
-.reveal {
+/* the 3D dot wave (DotWave.js): strongest on the sides, slightly softer behind the content */
+.dots {
   position: absolute;
   /* the full window width: .intro is centred, so 50% - 50vw reaches the window's edges */
   left: calc(50% - 50vw);
   right: calc(50% - 50vw);
-  /* reaches past the top of the page, like the guides */
+  /* reaches past the top of the page */
   top: -400px;
-  bottom: -94px;
-  background-image: radial-gradient(circle, #a7b4cf 1px, transparent 1.5px);
-  background-size: 16px 16px;
-}
-
-.sideDots {
-  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.45) 30%, rgb(0 0 0 / 0.45) 70%, black),
-    /* eases in near the top of the page, strongest just above the content (400px in), fading out towards the divider */
-    linear-gradient(transparent 250px, black 420px, transparent);
+  /* runs ~200px past the bottom of the hero (which is 94px below the content), into the work list */
+  bottom: -294px;
+  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.8) 30%, rgb(0 0 0 / 0.8) 70%, black),
+    /* eases in near the top of the page, full strength through the content (400px in), then fades out across
+       the bottom of the hero, gone ~200px below it */
+    linear-gradient(transparent 250px, black 420px, black calc(100% - 330px), transparent);
   mask-composite: intersect;
-  opacity: 0.6;
 }
 
-/* the same lattice, shown faintly in a soft circle around the cursor.
-   --x, --y and --on are set from the cursor in Intro/index.js */
-.reveal {
-  mask-image: radial-gradient(circle 200px at var(--x, -999px) var(--y, -999px), black, transparent);
-  opacity: calc(var(--on, 0) * 0.45);
-  transition: opacity 0.4s ease;
+/* on narrow screens the text runs nearly edge to edge, so the stronger side edges would sit behind it */
+@media screen and (max-width: 700px) {
+  .dots {
+    mask-image: linear-gradient(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.55)),
+      linear-gradient(transparent 250px, black 420px, black calc(100% - 330px), transparent);
+  }
 }
 
-/* the content column's edges, drawn as faint guides from the top of the page down to the divider */
-.guide {
-  position: absolute;
-  /* reaches past the top of the page, so the line runs from the very top */
-  top: -400px;
-  bottom: -94px;
-  width: 1px;
-  /* strongest near the top of the page, fading gradually to nothing as it nears the content (400px in), back near the divider */
-  background: linear-gradient(
-    rgba(62, 62, 225, 0.14) 120px,
-    transparent 380px,
-    transparent calc(100% - 180px),
-    rgba(62, 62, 225, 0.09) calc(100% - 20px)
-  );
-}
-
-.guideLeft {
-  left: 0;
-}
-
-.guideRight {
-  right: 0;
+.dotsCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .cross {
@@ -139,7 +100,7 @@
   height: 1px;
 }
 
-/* where the guides meet the divider */
+/* where the hero's bottom edge was, at the content column's edges (in line with the work cards below) */
 .crossLeft,
 .crossRight {
   bottom: -99px;
@@ -188,6 +149,21 @@
   .longOne {
     margin: 20px auto;
     width: 100%;
+  }
+}
+
+/* a soft white backing behind the bio, so it reads cleanly over the dot wave: a white rectangle
+   blurred into soft edges, drawn behind the text but above the wave (.longOne is its own layer) */
+@media screen {
+  .longOne::before {
+    content: '';
+    position: absolute;
+    inset: -36px -48px;
+    z-index: -1;
+    border-radius: 48px;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(28px);
+    pointer-events: none;
   }
 }
 
@@ -245,7 +221,10 @@
 .helloButton {
   color: var(--linkColor);
   font-size: 24px;
-  background: none;
+  /* frosted glass: the dot wave behind shows through, softened */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 2px solid var(--linkColor);
   padding: 0 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

@@ -1,0 +1,11 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  background: white;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

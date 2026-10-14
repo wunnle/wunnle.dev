@@ -104,7 +104,11 @@
 }
 
 .workImages {
-  background: rgba(148, 151, 158, 0.1);
+  /* lightly frosted: the dot sea shows through under a grey tint, with only a touch of blur so the
+     dots don't swell */
+  background: rgba(148, 151, 158, 0.22);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   margin-top: 80px;
   opacity: 0;
   min-height: 600px;
@@ -223,6 +227,42 @@
   width: 1081px;
   max-width: 100%;
   margin: auto;
+  position: relative;
+}
+
+/* clips the full-width dot sea sideways only, so it never adds a horizontal scrollbar */
+.workWrapper {
+  overflow-x: clip;
+}
+
+/* the same dot sea as the home page hero: strongest on the sides, slightly softer behind the text,
+   fading in near the top of the page and running down behind the top of the frosted image area */
+.dots {
+  position: absolute;
+  /* .topContainer is centred, so 50% - 50vw reaches the window's edges */
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  top: -560px;
+  bottom: -460px;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.8) 30%, rgb(0 0 0 / 0.8) 70%, black),
+    linear-gradient(transparent 250px, black 420px, black calc(100% - 540px), transparent);
+  mask-composite: intersect;
+}
+
+/* on narrow screens the text runs nearly edge to edge, so the stronger side edges would sit behind it */
+@media screen and (max-width: 700px) {
+  .dots {
+    mask-image: linear-gradient(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.55)),
+      linear-gradient(transparent 250px, black 420px, black calc(100% - 540px), transparent);
+  }
+}
+
+.dotsCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 1100px) {
@@ -244,9 +284,31 @@
   box-sizing: border-box;
   padding-bottom: 80px;
   max-width: 740px;
+  position: relative;
+  z-index: 1;
+}
+
+/* a soft white backing behind the description, as on the home page bio: a white rectangle blurred
+   into soft edges, behind the text but above the dot sea (the bottom inset skips the 80px padding) */
+@media screen {
+  .inner::before {
+    content: '';
+    position: absolute;
+    inset: -36px -48px 44px;
+    z-index: -1;
+    border-radius: 48px;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(28px);
+    pointer-events: none;
+  }
 }
 
 @media screen and (max-width: 1100px) {
+  /* the description has 50px of bottom padding here instead of 80px */
+  .inner::before {
+    bottom: 14px;
+  }
+
   .inner {
     padding-left: 0;
     margin-left: 0;
@@ -262,6 +324,12 @@
 @media screen and (max-width: 600px) {
   .inner {
     margin-top: 10px;
+  }
+
+  /* same size as the home page bio on phones */
+  .inner p {
+    font-size: calc(var(--smallBodySize) * 1.05);
+    line-height: 1.6em;
   }
 
   .work h2 {
