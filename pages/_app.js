@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next'
 import App from 'next/app'
 import React from 'react'
 
@@ -20,6 +21,7 @@ class MyApp extends App {
         <WorksContext.Provider value={works}>
           <>
             <Component {...pageProps} />
+            <Analytics />
           </>
         </WorksContext.Provider>
       </>

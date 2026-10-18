@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "fast-glob": "^3.2.4",
     "file-loader": "^6.2.0",
     "glob": "^7.1.4",
