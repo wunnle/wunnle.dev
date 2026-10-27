@@ -5,8 +5,10 @@ import { useEffect, useRef } from 'react'
 //
 // The surface is also a small spring simulation (a height field following the wave equation), one cell
 // per dot. The cursor pushes down on it, which makes a dent that trails a wake as it moves; a click is a
-// sharper push, and the ripple that follows comes out of the simulation itself. Stops when scrolled out
-// of view; with reduced motion it draws a single still frame and doesn't react to the cursor.
+// sharper push, and the ripple that follows comes out of the simulation itself. Scrolling moves the
+// waves: the near edge is the shore, and scrolling down sends them out from it towards the horizon,
+// scrolling up brings them back in, easing slowly to a stop with the scroll. Stops when scrolled out of view; with reduced motion it draws a
+// single still frame and doesn't react to the cursor or scroll.
 
 const PITCH = (35 * Math.PI) / 180 // how far the camera looks down: 0 = level with the plane, 90° = straight down
 const CAMERA_HEIGHT = 1 // above the plane, in world units
@@ -14,6 +16,8 @@ const STEP = 0.04 // dot spacing on the plane, in world units (also the simulati
 const NEAR = 0.3 // nearest and farthest rows drawn, measured along the plane from below the camera
 const FAR = 7
 const AMPLITUDE = 0.05 // height of the slow background waves, in world units
+const SCROLL_TRAVEL = 0.0018 // how far the waves move out from the shore per px scrolled, in world units
+const SCROLL_EASE = 0.03 // how quickly they catch up with the scroll (0..1 per step)
 
 // the surface simulation, stepped at a fixed 60Hz
 const TENSION = 0.1 // how strongly each point is pulled towards its neighbours (sets the ripple speed)
@@ -144,7 +148,10 @@ const DotWave = ({ className, viewHeight, viewLift = 0 }) => {
     const wake = () => {
       active = true
     }
+    // how far the waves have moved out from the shore, easing after the scroll position
+    let travel = window.scrollY * SCROLL_TRAVEL
     const simulate = () => {
+      travel += (window.scrollY * SCROLL_TRAVEL - travel) * SCROLL_EASE
       touch.i += (touch.ti - touch.i) * FOLLOW
       touch.j += (touch.tj - touch.j) * FOLLOW
       touch.on += (touch.target - touch.on) * FADE
@@ -202,6 +209,8 @@ const DotWave = ({ className, viewHeight, viewLift = 0 }) => {
 
       let row = 0
       for (let z = NEAR; row < rows; z += STEP, row++) {
+        // where this row is on the water, with the waves moved out by the scroll: the dots stay put
+        const wz = z - travel
         const rowDepth = depthOf(0, z)
         if (rowDepth <= 0.05) continue
         // enough columns to cover the width at this depth
@@ -216,8 +225,8 @@ const DotWave = ({ className, viewHeight, viewLift = 0 }) => {
           let y =
             AMPLITUDE *
             (Math.sin(x * 5 + t * 0.6) * 0.7 +
-              Math.sin(z * 4 - t * 0.9) * 0.6 +
-              Math.sin((x + z) * 3.5 + t * 0.4) * 0.3)
+              Math.sin(wz * 4 - t * 0.9) * 0.6 +
+              Math.sin((x + wz) * 3.5 + t * 0.4) * 0.3)
           if (active) y += h[row * cols + col + half]
 
           const depth = depthOf(y, z)
@@ -274,6 +283,7 @@ const DotWave = ({ className, viewHeight, viewLift = 0 }) => {
       visible = entry.isIntersecting
       cancelAnimationFrame(frame)
       last = 0
+      travel = window.scrollY * SCROLL_TRAVEL // no catching up on scrolling done out of view
       if (visible && !still) frame = requestAnimationFrame(loop)
     })
     observer.observe(el)
