@@ -8,12 +8,10 @@ website: 'https://spiellist.com'
 featuredImg: '/spiellist/preview.png'
 backgroundColor: "#0F61C0"
 ---
-SpielList is an unofficial guide to SPIEL Essen, the world's biggest board game fair: every new game in one list, with BoardGameGeek scores, prices and booths, built mobile first for walking the halls.
+SpielList is an unofficial guide to SPIEL Essen, the world's biggest board game fair: every new game in one list, with BoardGameGeek scores, prices and booths, built for phones in the halls.
 
-Visitors mark games as interested, to buy or bought, see their marked stands on the hall maps, and share their lists with friends. It works offline, since the halls' signal is patchy.
+Visitors mark the games they want, see those stands on the hall maps, share their lists with friends, and use it all offline.
 
-It's a statically exported Next.js site. A Vercel cron watches the official novelties list and BGG's preview and rebuilds through GitHub Actions when either changes; Firebase handles sign-in and sync.
-
-From launch on 12 October to the end of the fair it had about 7,200 visitors and over 70,000 page views. During the four fair days, 3,500 people marked games 5,387 times, 89% of them on phones.
+From launch to the end of the fair it had about 7,200 visitors; during the four fair days, 3,500 people marked games 5,387 times.
 
 I go to SPIEL every year and built SpielList to make those visits easier.
